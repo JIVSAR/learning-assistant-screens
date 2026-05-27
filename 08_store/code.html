@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <title>리워드 스토어 — 학습도우미</title>
+  <title>🛒 상점 — 학습도우미</title>
   <link rel="stylesheet" href="../assets/style.css">
   <style>
     @page { size: 1280px 1100px; margin: 0; }
@@ -16,7 +16,7 @@
       text-align: center;
     }
     .item-thumb {
-      width: 100%; aspect-ratio: 1.4/1;
+      width: 100%; aspect-ratio: 1/1;
       border-radius: var(--r-sm);
       display: flex; align-items: center; justify-content: center;
       font-size: 48px;
@@ -43,11 +43,11 @@
     <main class="main" style="padding-top: 24px;">
       <!-- Header with points -->
       <div style="position: relative;">
-        <h1 class="h1">리워드 스토어</h1>
+        <h1 class="h1">🛒 상점</h1>
         <div style="position: absolute; right: 0; top: 53px; display: flex; align-items: center; gap: 12px; padding: 12px 20px; background: var(--orange-soft); border: 2px solid var(--orange); border-radius: var(--r-full);">
           <span style="font-size: 11px; color: var(--orange); font-weight: 700; letter-spacing: 0.05em;">내 포인트</span>
-          <span style="font-family: 'Hanken Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: var(--orange);">1000 P</span>
-          <a href="#" class="btn btn-primary btn-sm">충전하기</a>
+          <span style="font-family: 'Hanken Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: var(--orange);">320 P</span>
+          <a href="#" class="btn btn-primary btn-sm">충전 →</a>
         </div>
       </div>
       <p class="body" style="color: var(--neutral-500); margin-bottom: 12px;">학습으로 모은 포인트를 가치 있게 사용하세요. 매주 신규 아이템이 추가됩니다.</p>
@@ -93,17 +93,17 @@
           </div>
         </div>
 
-        <div class="item-card">
-          <div class="item-thumb" style="background: linear-gradient(135deg, #D1FAE5, #ECFDF5); color: var(--green);">📚</div>
+        <div class="item-card" style="opacity: 0.6;">
+          <div class="item-thumb" style="background: linear-gradient(135deg, var(--green-soft), var(--green-soft-2)); color: var(--green);">📚</div>
           <div style="font-size: 14px; font-weight: 700; margin-bottom: 4px;">인강 20% 할인 쿠폰</div>
           <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 12px;">제휴 인강 사이트 할인 쿠폰</div>
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <span style="font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: var(--green);">500 P</span>
-            <a href="#" class="btn btn-primary btn-sm">구매하기</a>
+            <span class="btn btn-ghost btn-sm" style="color: var(--neutral-400); border: 1px solid var(--neutral-200);">포인트 부족</span>
           </div>
         </div>
 
-        <div class="item-card" style="background: linear-gradient(135deg, var(--navy) 0%, #2D476F 100%); color: white; border: 0;">
+        <div class="item-card" style="background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: white; border: 0;">
           <div class="item-thumb" style="background: rgba(255,255,255,0.1); color: white;">💎</div>
           <div style="font-size: 14px; font-weight: 700; margin-bottom: 4px;">프리미엄 1주 이용권</div>
           <div style="font-size: 11px; color: rgba(255,255,255,0.7); margin-bottom: 12px;">프리미엄 기능 7일 무료 이용</div>
@@ -114,7 +114,7 @@
         </div>
 
         <div class="item-card" style="opacity: 0.6;">
-          <div class="item-thumb" style="background: linear-gradient(135deg, #FEE2E2, #FFF7ED); color: var(--red);">📖</div>
+          <div class="item-thumb" style="background: linear-gradient(135deg, var(--red-soft-2), #FFF7ED); color: var(--red);">📖</div>
           <div style="font-size: 14px; font-weight: 700; margin-bottom: 4px;">도서 상품권 10,000원</div>
           <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 12px;">예스24·교보문고 사용 가능</div>
           <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -123,13 +123,13 @@
           </div>
         </div>
 
-        <div class="item-card">
+        <div class="item-card" style="opacity: 0.6;">
           <div class="item-thumb" style="background: linear-gradient(135deg, #FEF3C7, #FFFBEB); color: #B45309;">☕</div>
           <div style="font-size: 14px; font-weight: 700; margin-bottom: 4px;">카페 쿠폰</div>
           <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 12px;">스타벅스 아메리카노 1잔</div>
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <span style="font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: #B45309;">800 P</span>
-            <a href="#" class="btn btn-primary btn-sm">구매하기</a>
+            <span class="btn btn-ghost btn-sm" style="color: var(--neutral-400); border: 1px solid var(--neutral-200);">포인트 부족</span>
           </div>
         </div>
 

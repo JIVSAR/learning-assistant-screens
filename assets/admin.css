@@ -58,9 +58,11 @@ html, body { background: #1E293B; }
   --neutral-900: rgba(255,255,255,1);
   /* Alert box soft tones — 의미 색 유지하되 다크 톤으로 */
   --red-soft: rgba(239,68,68,0.12);
+  --red-soft-2: rgba(239,68,68,0.12);   /* badge-danger·활동 기록 실패 다크모드 변형 */
   --orange-soft: rgba(255,92,0,0.12);
   --info-soft: rgba(59,130,246,0.12);
   --green-soft: rgba(16,185,129,0.12);
+  --green-soft-2: rgba(16,185,129,0.10); /* 더 연한 녹색 다크모드 변형 */
   /* 브랜드 컬러: 다크 모드에서 더 밝은 톤으로 — 가시성 확보 */
   --navy: #3B82F6;
   --navy-deep: #1E3A8A;
@@ -85,17 +87,17 @@ html, body { background: #1E293B; }
 .admin-main .badge-info    { background: rgba(59,130,246,0.18);  color: #93C5FD; }
 .admin-main .badge-navy    { background: rgba(59,130,246,0.25);  color: #FFFFFF; }
 
-/* Dark mode override: 인라인 직접 hex 색(#FEF2F2 등) 사용처 강제 변경 */
+/* Dark mode override: 인라인 토큰(var(--red-soft) 등) 사용처 강제 변경 */
 /* 배경: 모든 요소 (div, tr, td 등) */
-.admin-main *[style*="#FEF2F2"], .admin-main *[style*="#FEE2E2"] { background-color: rgba(239,68,68,0.12) !important; }
+.admin-main *[style*="var(--red-soft)"], .admin-main *[style*="var(--red-soft-2)"] { background-color: rgba(239,68,68,0.12) !important; }
 .admin-main *[style*="#FFF7ED"], .admin-main *[style*="#FFFBEB"], .admin-main *[style*="#FEF3C7"] { background-color: rgba(255,92,0,0.12) !important; }
-.admin-main *[style*="#ECFDF5"], .admin-main *[style*="#D1FAE5"] { background-color: rgba(16,185,129,0.12) !important; }
+.admin-main *[style*="var(--green-soft-2)"], .admin-main *[style*="var(--green-soft)"] { background-color: rgba(16,185,129,0.12) !important; }
 .admin-main *[style*="#DBEAFE"], .admin-main *[style*="#EFF6FF"] { background-color: rgba(59,130,246,0.12) !important; }
 
 /* 텍스트 색: alert div만 (테이블 행은 디폴트 흰색 inherit) */
-.admin-main div[style*="#FEF2F2"], .admin-main div[style*="#FEE2E2"] { color: #FCA5A5 !important; }
+.admin-main div[style*="var(--red-soft)"], .admin-main div[style*="var(--red-soft-2)"] { color: #FCA5A5 !important; }
 .admin-main div[style*="#FFF7ED"], .admin-main div[style*="#FFFBEB"], .admin-main div[style*="#FEF3C7"] { color: #FCD34D !important; }
-.admin-main div[style*="#ECFDF5"], .admin-main div[style*="#D1FAE5"] { color: #6EE7B7 !important; }
+.admin-main div[style*="var(--green-soft-2)"], .admin-main div[style*="var(--green-soft)"] { color: #6EE7B7 !important; }
 .admin-main div[style*="#DBEAFE"], .admin-main div[style*="#EFF6FF"] { color: #93C5FD !important; }
 /* 어두운 텍스트 색 → 밝은 의미 색으로 */
 .admin-main *[style*="color: #991B1B"] { color: #FCA5A5 !important; }
