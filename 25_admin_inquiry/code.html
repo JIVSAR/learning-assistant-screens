@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><title>1:1 문의 관리 — 학습도우미 ADMIN</title>
+<html lang="ko"><head><meta charset="utf-8"><title>1:1 문의 관리 — 학습도우미 관리자</title>
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="../assets/admin.css">
 <style>
@@ -10,22 +10,22 @@
 <body>
 <div class="page">
   <div class="admin-topbar">
-    <div class="brand">📘 학습도우미<span class="badge-admin">ADMIN</span></div>
+    <div class="brand">학습도우미<span class="badge-admin">관리자</span></div>
     <div class="right"><span>👤 관리자 김</span><span>⚙️</span><span>🚪 로그아웃</span></div>
   </div>
 
   <div class="admin-shell">
     <aside class="admin-sidebar">
-      <div class="admin-sidebar-section">OVERVIEW</div>
-      <a href="#"><span class="icon">📊</span>대시보드</a>
-      <div class="admin-sidebar-section">MANAGEMENT</div>
-      <a href="#"><span class="icon">👥</span>회원 관리</a>
-      <a href="#"><span class="icon">📝</span>게시판 관리<span class="count">12</span></a>
-      <a href="#"><span class="icon">🛒</span>상점 아이템</a>
-      <a href="#"><span class="icon">📢</span>광고·이벤트</a>
+      <div class="admin-sidebar-section">개요</div>
+      <a href="../20_admin_dashboard/code.html"><span class="icon">📊</span>대시보드</a>
+      <div class="admin-sidebar-section">관리</div>
+      <a href="../21_admin_users/code.html"><span class="icon">👥</span>회원 관리</a>
+      <a href="../22_admin_posts/code.html"><span class="icon">📝</span>게시판 관리<span class="count">12</span></a>
+      <a href="../23_admin_items/code.html"><span class="icon">🛒</span>상점 아이템</a>
+      <a href="../24_admin_promo/code.html"><span class="icon">📢</span>광고·이벤트</a>
       <a href="#" class="active"><span class="icon">💬</span>1:1 문의<span class="count">23</span></a>
-      <div class="admin-sidebar-section">SYSTEM</div>
-      <a href="#"><span class="icon">🔐</span>권한 관리</a>
+      <div class="admin-sidebar-section">시스템</div>
+      <a href="../26_admin_roles/code.html"><span class="icon">🔐</span>권한 관리</a>
       <a href="#"><span class="icon">📜</span>감사 로그</a>
     </aside>
 
@@ -33,7 +33,7 @@
       <div class="admin-page-title">
         <div>
           <h1>💬 1:1 문의 관리</h1>
-          <p>SLA 24시간 · 미답변 23건 · 18시간 경과 1건 ⚠️</p>
+          <p>응답 기한 24시간 · 미답변 23건 · 18시간 경과 1건 ⚠️</p>
         </div>
       </div>
 
@@ -76,8 +76,8 @@
             <td>도전</td>
             <td><span class="badge badge-danger">결제</span></td>
             <td><strong style="color: var(--red);">18시간 전</strong></td>
-            <td><span class="badge badge-danger">🔴 SLA</span></td>
-            <td><a href="#" class="btn btn-primary btn-sm">답변하기 ▶</a></td>
+            <td><span class="badge badge-danger">🔴 긴급</span></td>
+            <td><a href="#" class="btn btn-secondary btn-sm">답변</a></td>
           </tr>
           <tr style="background: #FFF7ED;">
             <td>I502</td>

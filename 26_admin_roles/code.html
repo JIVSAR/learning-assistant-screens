@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><title>권한 관리 — 학습도우미 ADMIN</title>
+<html lang="ko"><head><meta charset="utf-8"><title>권한 관리 — 학습도우미 관리자</title>
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="../assets/admin.css">
 <style>
@@ -12,21 +12,21 @@
 <body>
 <div class="page">
   <div class="admin-topbar">
-    <div class="brand">📘 학습도우미<span class="badge-admin">ADMIN</span></div>
-    <div class="right"><span>👤 관리자 김 (Super Admin)</span><span>⚙️</span><span>🚪 로그아웃</span></div>
+    <div class="brand">학습도우미<span class="badge-admin">관리자</span></div>
+    <div class="right"><span>👤 관리자 김 (최고 관리자)</span><span>⚙️</span><span>🚪 로그아웃</span></div>
   </div>
 
   <div class="admin-shell">
     <aside class="admin-sidebar">
-      <div class="admin-sidebar-section">OVERVIEW</div>
-      <a href="#"><span class="icon">📊</span>대시보드</a>
-      <div class="admin-sidebar-section">MANAGEMENT</div>
-      <a href="#"><span class="icon">👥</span>회원 관리</a>
-      <a href="#"><span class="icon">📝</span>게시판 관리<span class="count">12</span></a>
-      <a href="#"><span class="icon">🛒</span>상점 아이템</a>
-      <a href="#"><span class="icon">📢</span>광고·이벤트</a>
-      <a href="#"><span class="icon">💬</span>1:1 문의<span class="count">23</span></a>
-      <div class="admin-sidebar-section">SYSTEM</div>
+      <div class="admin-sidebar-section">개요</div>
+      <a href="../20_admin_dashboard/code.html"><span class="icon">📊</span>대시보드</a>
+      <div class="admin-sidebar-section">관리</div>
+      <a href="../21_admin_users/code.html"><span class="icon">👥</span>회원 관리</a>
+      <a href="../22_admin_posts/code.html"><span class="icon">📝</span>게시판 관리<span class="count">12</span></a>
+      <a href="../23_admin_items/code.html"><span class="icon">🛒</span>상점 아이템</a>
+      <a href="../24_admin_promo/code.html"><span class="icon">📢</span>광고·이벤트</a>
+      <a href="../25_admin_inquiry/code.html"><span class="icon">💬</span>1:1 문의<span class="count">23</span></a>
+      <div class="admin-sidebar-section">시스템</div>
       <a href="#" class="active"><span class="icon">🔐</span>권한 관리</a>
       <a href="#"><span class="icon">📜</span>감사 로그</a>
     </aside>
@@ -35,7 +35,7 @@
       <div class="admin-page-title">
         <div>
           <h1>🔐 권한·관리자 계정 관리</h1>
-          <p>총 관리자 4명 · 권한 4단계 · Super Admin 전용 페이지</p>
+          <p>총 관리자 4명 · 권한 4단계 · 최고 관리자 전용 페이지</p>
         </div>
         <a href="#" class="btn btn-primary btn-sm">+ 관리자 추가</a>
       </div>
@@ -48,22 +48,22 @@
           <tbody>
             <tr style="background: var(--orange-soft);">
               <td>A001</td><td><strong>관리자 김</strong> ⭐</td><td>kim@admin.studyguard.kr</td>
-              <td><span class="badge badge-navy">Super Admin</span></td>
+              <td><span class="badge badge-navy">최고 관리자</span></td>
               <td>2분 전</td><td>✅ 활성</td><td><span class="badge badge-success">활성</span></td><td>⋮</td>
             </tr>
             <tr>
               <td>A002</td><td>관리자 박</td><td>park@admin.studyguard.kr</td>
-              <td><span class="badge badge-info">Operator</span></td>
+              <td><span class="badge badge-info">운영자</span></td>
               <td>15분 전</td><td>✅ 활성</td><td><span class="badge badge-success">활성</span></td><td>⋮</td>
             </tr>
             <tr>
               <td>A003</td><td>관리자 이</td><td>lee@admin.studyguard.kr</td>
-              <td><span class="badge badge-warning">Moderator</span></td>
+              <td><span class="badge badge-warning">중재자</span></td>
               <td>1시간 전</td><td>✅ 활성</td><td><span class="badge badge-success">활성</span></td><td>⋮</td>
             </tr>
             <tr>
               <td>A004</td><td>관리자 최</td><td>choi@admin.studyguard.kr</td>
-              <td><span class="badge" style="background: #E0E7FF; color: #3730A3;">Support</span></td>
+              <td><span class="badge" style="background: #E0E7FF; color: #3730A3;">지원</span></td>
               <td>3시간 전</td><td>✅ 활성</td><td><span class="badge badge-success">활성</span></td><td>⋮</td>
             </tr>
           </tbody>
@@ -77,10 +77,10 @@
           <thead>
             <tr>
               <th>권한 / 메뉴</th>
-              <th style="text-align: center;">Super Admin</th>
-              <th style="text-align: center;">Operator</th>
-              <th style="text-align: center;">Moderator</th>
-              <th style="text-align: center;">Support</th>
+              <th style="text-align: center;">최고 관리자</th>
+              <th style="text-align: center;">운영자</th>
+              <th style="text-align: center;">중재자</th>
+              <th style="text-align: center;">지원</th>
             </tr>
           </thead>
           <tbody>
