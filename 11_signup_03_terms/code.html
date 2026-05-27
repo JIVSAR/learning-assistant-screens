@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>회원가입 - 약관 동의 ⭐ — 학습도우미</title><link rel="stylesheet" href="../assets/style.css">
+<style>
+  @page { size: 1280px 1000px; margin: 0; }
+  body { width: 100%; max-width: 1280px; margin: 0 auto; }
+  .page { width: 100%; max-width: 1280px; min-height: 1000px; position: relative; background: var(--neutral-50); }
+  .signup-shell { display: flex; align-items: center; justify-content: center; min-height: 900px; padding: 40px; }
+  .signup-card { background: var(--white); border-radius: var(--r-lg); padding: 48px 56px; max-width: 540px; width: 100%; border: 1px solid var(--neutral-200); }
+  .stepper { display: flex; gap: 8px; align-items: center; margin-bottom: 24px; }
+  .step-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--neutral-200); }
+  .step-dot.active { background: var(--orange); }
+  .step-dot.done { background: var(--green); }
+  .step-line { flex: 1; height: 2px; background: var(--neutral-200); }
+  .step-line.done { background: var(--orange); }
+
+  .terms-box { background: var(--neutral-50); border: 1px solid var(--neutral-200); border-radius: var(--r-md); padding: 4px; }
+  .term-item { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--neutral-200); }
+  .term-item:last-child { border-bottom: 0; }
+  .term-item.all { background: var(--white); border-radius: var(--r-sm); margin-bottom: 4px; border-bottom: 0; }
+  .term-checkbox { width: 22px; height: 22px; border: 2px solid var(--neutral-300); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .term-checkbox.checked { background: var(--orange); border-color: var(--orange); color: var(--white); }
+  .term-label { flex: 1; font-size: 13px; color: var(--neutral-900); }
+  .term-label .required { color: var(--red); font-weight: 700; font-size: 11px; margin-right: 4px; }
+  .term-label .optional { color: var(--neutral-400); font-weight: 600; font-size: 11px; margin-right: 4px; }
+  .view-link { font-size: 11px; color: var(--neutral-500); text-decoration: none; flex-shrink: 0; }
+</style></head>
+<body>
+<div class="page">
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid var(--neutral-200); background: var(--white);">
+    <a href="#" style="text-decoration: none; display: flex; align-items: center; gap: 8px; color: var(--neutral-500); font-size: 14px;"><span>←</span><span>뒤로</span></a>
+    <div style="font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; color: var(--navy);">📘 학습도우미 · 회원가입 (2/4)</div>
+    <a href="#" style="text-decoration: none; color: var(--neutral-400); font-size: 18px;">✕</a>
+  </div>
+
+  <div class="signup-shell">
+    <div class="signup-card">
+      <div class="stepper">
+        <div class="step-dot done"></div><div class="step-line done"></div>
+        <div class="step-dot done"></div><div class="step-line done"></div>
+        <div class="step-dot active"></div><div class="step-line"></div>
+        <div class="step-dot"></div><div class="step-line"></div>
+        <div class="step-dot"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--neutral-500); margin-bottom: 24px; font-family: 'JetBrains Mono', monospace;">
+        <span>METHOD</span><span>EMAIL</span><span style="color: var(--orange); font-weight: 700;">TERMS ⭐</span><span>VERIFY</span><span>PROFILE</span>
+      </div>
+
+      <!-- 11주차 강조 배너 -->
+      <div style="background: var(--orange-soft); border-left: 3px solid var(--orange); padding: 10px 14px; border-radius: var(--r-sm); margin-bottom: 20px; font-size: 12px; color: var(--orange); font-weight: 600;">
+        ⭐ 핵심 분기 화면 — 11주차 교수 직접 지적사항 반영
+      </div>
+
+      <h1 style="font-size: 24px; font-weight: 700; color: var(--neutral-900); margin-bottom: 8px;">약관 동의가 필요합니다</h1>
+      <p style="font-size: 13px; color: var(--neutral-500); margin-bottom: 24px;">서비스 이용을 위해 아래 약관에 동의해주세요.</p>
+
+      <div class="terms-box">
+        <div class="term-item all">
+          <div class="term-checkbox checked">✓</div>
+          <div class="term-label" style="font-weight: 700;">전체 동의 — 필수 + 선택 항목 모두 동의</div>
+        </div>
+        <div class="term-item">
+          <div class="term-checkbox checked">✓</div>
+          <div class="term-label"><span class="required">[필수]</span> 만 14세 이상입니다</div>
+          <a class="view-link" href="#">보기 →</a>
+        </div>
+        <div class="term-item">
+          <div class="term-checkbox checked">✓</div>
+          <div class="term-label"><span class="required">[필수]</span> 서비스 이용약관</div>
+          <a class="view-link" href="#">보기 →</a>
+        </div>
+        <div class="term-item">
+          <div class="term-checkbox checked">✓</div>
+          <div class="term-label"><span class="required">[필수]</span> 개인정보 수집·이용 동의</div>
+          <a class="view-link" href="#">보기 →</a>
+        </div>
+        <div class="term-item">
+          <div class="term-checkbox checked">✓</div>
+          <div class="term-label"><span class="optional">[선택]</span> 마케팅 정보 수신 (이벤트·할인)</div>
+          <a class="view-link" href="#">보기 →</a>
+        </div>
+        <div class="term-item">
+          <div class="term-checkbox checked">✓</div>
+          <div class="term-label"><span class="optional">[선택]</span> 흑역사 시스템 활성화</div>
+          <a class="view-link" href="#">보기 →</a>
+        </div>
+      </div>
+
+      <div style="background: var(--info-soft); border-radius: var(--r-sm); padding: 12px 14px; margin-top: 16px; font-size: 12px; color: #1E40AF; line-height: 1.6;">
+        💡 흑역사 시스템은 가입 후에도 마이페이지에서 언제든 켜고 끌 수 있어요.
+      </div>
+
+      <div style="display: flex; gap: 12px; margin-top: 24px;">
+        <a href="#" style="flex: 0 0 140px; display: flex; align-items: center; justify-content: center; height: 52px; border-radius: var(--r-md); background: var(--white); color: var(--neutral-700); border: 1.5px solid var(--neutral-300); font-weight: 600; font-size: 13px; text-decoration: none;">
+          가입 중단
+        </a>
+        <a href="#" style="flex: 1; display: flex; align-items: center; justify-content: center; height: 52px; border-radius: var(--r-md); background: var(--orange); color: var(--white); font-weight: 700; font-size: 15px; text-decoration: none;">
+          동의하고 다음 단계 →
+        </a>
+      </div>
+
+      <!-- 분기 표 -->
+      <div style="margin-top: 20px; padding: 12px; background: var(--neutral-50); border-radius: var(--r-sm); font-size: 11px; color: var(--neutral-500); line-height: 1.6;">
+        <strong style="color: var(--neutral-700);">분기 동작</strong><br>
+        · 필수 3개 미체크 + [다음] 클릭 → Toast "필수 약관에 모두 동의해주세요"<br>
+        · [가입 중단] 클릭 → Modal "지금까지 입력한 정보가 삭제됩니다. 정말?"<br>
+        · 선택(흑역사) OFF 후 진행 → 가입 후 패널티 기능 비활성
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-id">P-AU-SU-03 · /auth/signup/terms</div>
+</div>
+</body></html>

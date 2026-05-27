@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>게시판 관리 — 학습도우미 ADMIN</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/admin.css">
+<style>
+  @page { size: 1280px 950px; margin: 0; }
+  body { width: 100%; max-width: 1280px; margin: 0 auto; }
+  .page { width: 100%; max-width: 1280px; min-height: 950px; position: relative; }
+</style></head>
+<body>
+<div class="page">
+  <div class="admin-topbar">
+    <div class="brand">📘 학습도우미<span class="badge-admin">ADMIN</span></div>
+    <div class="right"><span>👤 관리자 김</span><span>⚙️</span><span>🚪 로그아웃</span></div>
+  </div>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-section">OVERVIEW</div>
+      <a href="#"><span class="icon">📊</span>대시보드</a>
+      <div class="admin-sidebar-section">MANAGEMENT</div>
+      <a href="#"><span class="icon">👥</span>회원 관리</a>
+      <a href="#" class="active"><span class="icon">📝</span>게시판 관리<span class="count">12</span></a>
+      <a href="#"><span class="icon">🛒</span>상점 아이템</a>
+      <a href="#"><span class="icon">📢</span>광고·이벤트</a>
+      <a href="#"><span class="icon">💬</span>1:1 문의<span class="count">23</span></a>
+      <div class="admin-sidebar-section">SYSTEM</div>
+      <a href="#"><span class="icon">🔐</span>권한 관리</a>
+      <a href="#"><span class="icon">📜</span>감사 로그</a>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-page-title">
+        <div>
+          <h1>📝 게시판 관리 · 안전 모니터링</h1>
+          <p>AI 자동 분석 + 관리자 수동 검토 · SLA 24시간 이내 처리</p>
+        </div>
+      </div>
+
+      <!-- AI Stats -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px;">
+        <div class="admin-kpi-card" style="padding: 14px;">
+          <div class="label">오늘 신규 게시글</div>
+          <div class="value" style="font-size: 22px;">1,247</div>
+        </div>
+        <div class="admin-kpi-card" style="padding: 14px;">
+          <div class="label">AI 자동 통과</div>
+          <div class="value" style="font-size: 22px; color: var(--green);">98.4%</div>
+        </div>
+        <div class="admin-kpi-card" style="padding: 14px;">
+          <div class="label">관리자 검토 보류</div>
+          <div class="value" style="font-size: 22px; color: var(--amber);">7건</div>
+        </div>
+        <div class="admin-kpi-card" style="padding: 14px;">
+          <div class="label">신고 미처리</div>
+          <div class="value" style="font-size: 22px; color: var(--red);">12건</div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div style="display: flex; gap: 4px; margin-bottom: 16px; background: var(--white); padding: 4px; border-radius: var(--r-md); border: 1px solid var(--neutral-200); width: fit-content;">
+        <span style="padding: 8px 16px; background: var(--navy); color: var(--white); border-radius: var(--r-sm); font-size: 13px; font-weight: 700;">전체</span>
+        <span style="padding: 8px 16px; font-size: 13px; color: var(--red); font-weight: 600;">🚨 신고 12</span>
+        <span style="padding: 8px 16px; font-size: 13px; color: var(--amber); font-weight: 600;">⚠️ 모니터링 보류 7</span>
+        <span style="padding: 8px 16px; font-size: 13px; color: var(--neutral-500);">자유 게시판</span>
+        <span style="padding: 8px 16px; font-size: 13px; color: var(--neutral-500);">공개 게시판 (흑역사)</span>
+      </div>
+
+      <table class="admin-table">
+        <thead>
+          <tr><th style="width: 70px;">ID</th><th>제목 · 본문 미리보기</th><th style="width: 110px;">작성자</th><th style="width: 100px;">게시판</th><th style="width: 110px;">AI 판정</th><th style="width: 100px;">상태</th><th style="width: 180px;">작업</th></tr>
+        </thead>
+        <tbody>
+          <tr style="background: #FEF2F2;">
+            <td><strong>P101</strong></td>
+            <td><strong>"흑역사 사진 노출이 너무 심한..."</strong><br><span style="font-size: 11px; color: var(--neutral-500);">신고 5건 접수 · AI 신뢰도 64%</span></td>
+            <td>user_X</td>
+            <td>공개</td>
+            <td><span class="badge badge-danger">부적절</span></td>
+            <td><span class="badge badge-warning">보류</span></td>
+            <td>
+              <a href="#" class="btn btn-secondary btn-sm" style="font-size: 11px; padding: 4px 8px;">✓ 승인</a>
+              <a href="#" class="btn btn-danger btn-sm" style="font-size: 11px; padding: 4px 8px;">🚫 차단</a>
+            </td>
+          </tr>
+          <tr>
+            <td>P102</td>
+            <td>오늘 갓생 살았습니다 · 인증샷 첨부</td>
+            <td>study_king</td>
+            <td>학습인증</td>
+            <td><span class="badge badge-success">안전</span></td>
+            <td><span class="badge badge-success">공개</span></td>
+            <td><span style="color: var(--neutral-400); font-size: 11px;">자동 처리</span></td>
+          </tr>
+          <tr style="background: #FEF2F2;">
+            <td>P103</td>
+            <td><strong>"외부 사이트 광고 의심..."</strong></td>
+            <td>marketer_X</td>
+            <td>자유</td>
+            <td><span class="badge badge-danger">광고</span></td>
+            <td><span class="badge badge-danger">차단</span></td>
+            <td>
+              <a href="#" class="btn btn-secondary btn-sm" style="font-size: 11px; padding: 4px 8px;">복원</a>
+              <a href="#" class="btn btn-ghost btn-sm" style="font-size: 11px; padding: 4px 8px;">경고</a>
+            </td>
+          </tr>
+          <tr style="background: #FFF7ED;">
+            <td>P104</td>
+            <td>SQL 풀이법 공유합니다</td>
+            <td>code_warrior</td>
+            <td>자유</td>
+            <td><span class="badge badge-warning">주의</span></td>
+            <td><span class="badge badge-warning">보류</span></td>
+            <td>
+              <a href="#" class="btn btn-secondary btn-sm" style="font-size: 11px; padding: 4px 8px;">✓ 승인</a>
+              <a href="#" class="btn btn-danger btn-sm" style="font-size: 11px; padding: 4px 8px;">🚫 차단</a>
+            </td>
+          </tr>
+          <tr>
+            <td>P105</td>
+            <td>오늘도 미달성... 흑역사 공개됨 ㅠ</td>
+            <td>silent_loser</td>
+            <td>공개</td>
+            <td><span class="badge badge-success">안전</span></td>
+            <td><span class="badge badge-success">공개</span></td>
+            <td><span style="color: var(--neutral-400); font-size: 11px;">자동 처리</span></td>
+          </tr>
+          <tr>
+            <td>P106</td>
+            <td>토익 LC 1회 독파 인증</td>
+            <td>도전</td>
+            <td>학습인증</td>
+            <td><span class="badge badge-success">안전</span></td>
+            <td><span class="badge badge-success">공개</span></td>
+            <td><span style="color: var(--neutral-400); font-size: 11px;">자동 처리</span></td>
+          </tr>
+          <tr style="background: #FEF2F2;">
+            <td>P107</td>
+            <td><strong>"개인정보 노출 의심 (이메일)..."</strong></td>
+            <td>night_owl</td>
+            <td>자유</td>
+            <td><span class="badge badge-danger">부적절</span></td>
+            <td><span class="badge badge-warning">보류</span></td>
+            <td>
+              <a href="#" class="btn btn-secondary btn-sm" style="font-size: 11px; padding: 4px 8px;">✓ 승인</a>
+              <a href="#" class="btn btn-danger btn-sm" style="font-size: 11px; padding: 4px 8px;">🚫 차단</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Bulk action -->
+      <div style="margin-top: 16px; padding: 12px 16px; background: var(--white); border: 1px solid var(--orange); border-radius: var(--r-md); display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-size: 12px; color: var(--neutral-700);">⚠️ <strong style="color: var(--orange);">3건 선택됨</strong></div>
+        <div style="display: flex; gap: 8px;">
+          <a href="#" class="btn btn-secondary btn-sm">✓ 일괄 공개 승인</a>
+          <a href="#" class="btn btn-danger btn-sm">🚫 일괄 차단</a>
+          <a href="#" class="btn btn-ghost btn-sm">📢 작성자 경고</a>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="screen-id">A-4 · /admin/posts</div>
+</div>
+</body></html>

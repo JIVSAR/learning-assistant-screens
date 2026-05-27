@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>회원가입 - 이메일 인증 — 학습도우미</title><link rel="stylesheet" href="../assets/style.css">
+<style>
+  @page { size: 1280px 900px; margin: 0; }
+  body { width: 100%; max-width: 1280px; margin: 0 auto; }
+  .page { width: 100%; max-width: 1280px; min-height: 900px; position: relative; background: var(--neutral-50); }
+  .signup-shell { display: flex; align-items: center; justify-content: center; min-height: 800px; padding: 40px; }
+  .signup-card { background: var(--white); border-radius: var(--r-lg); padding: 56px; max-width: 480px; width: 100%; border: 1px solid var(--neutral-200); text-align: center; }
+  .stepper { display: flex; gap: 8px; align-items: center; margin-bottom: 24px; }
+  .step-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--neutral-200); }
+  .step-dot.active { background: var(--orange); }
+  .step-dot.done { background: var(--green); }
+  .step-line { flex: 1; height: 2px; background: var(--neutral-200); }
+  .step-line.done { background: var(--orange); }
+  .code-input { display: flex; gap: 8px; justify-content: center; margin: 32px 0; }
+  .code-box { width: 56px; height: 64px; border: 2px solid var(--neutral-200); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; font-family: 'Hanken Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: var(--navy); }
+  .code-box.filled { border-color: var(--orange); background: var(--orange-soft); }
+</style></head>
+<body>
+<div class="page">
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid var(--neutral-200); background: var(--white);">
+    <a href="#" style="text-decoration: none; color: var(--neutral-500); font-size: 14px;">← 뒤로</a>
+    <div style="font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; color: var(--navy);">📘 학습도우미 · 회원가입 (3/4)</div>
+    <a href="#" style="text-decoration: none; color: var(--neutral-400); font-size: 18px;">✕</a>
+  </div>
+
+  <div class="signup-shell">
+    <div class="signup-card">
+      <div class="stepper">
+        <div class="step-dot done"></div><div class="step-line done"></div>
+        <div class="step-dot done"></div><div class="step-line done"></div>
+        <div class="step-dot done"></div><div class="step-line done"></div>
+        <div class="step-dot active"></div><div class="step-line"></div>
+        <div class="step-dot"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--neutral-500); margin-bottom: 24px; font-family: 'JetBrains Mono', monospace;">
+        <span>METHOD</span><span>EMAIL</span><span>TERMS</span><span style="color: var(--orange); font-weight: 700;">VERIFY</span><span>PROFILE</span>
+      </div>
+
+      <div style="font-size: 64px; margin-bottom: 16px;">📧</div>
+      <h1 style="font-size: 24px; font-weight: 700; color: var(--neutral-900); margin-bottom: 8px;">이메일로 인증 코드를 보냈어요</h1>
+      <p style="font-size: 14px; color: var(--neutral-500); margin-bottom: 8px;">아래 주소로 보낸 6자리 코드를 입력해주세요.</p>
+      <p style="font-size: 14px; color: var(--navy); font-weight: 600; margin-bottom: 32px;">[email protected]</p>
+
+      <div class="code-input">
+        <div class="code-box filled">1</div>
+        <div class="code-box filled">2</div>
+        <div class="code-box filled">3</div>
+        <div class="code-box filled">4</div>
+        <div class="code-box filled">5</div>
+        <div class="code-box" style="border-color: var(--orange); border-style: dashed;">_</div>
+      </div>
+
+      <div style="font-size: 13px; color: var(--neutral-700); margin-bottom: 8px;">
+        남은 시간: <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--orange);">04:32</span>
+      </div>
+      <div style="font-size: 12px; color: var(--neutral-400); margin-bottom: 24px;">
+        메일이 안 왔나요? <a href="#" style="color: var(--orange); font-weight: 600; text-decoration: none;">코드 재전송 →</a>
+      </div>
+
+      <a href="#" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 52px; border-radius: var(--r-md); background: var(--orange); color: var(--white); font-weight: 700; font-size: 15px; text-decoration: none;">
+        인증 확인 →
+      </a>
+
+      <div style="margin-top: 20px; padding: 10px; background: var(--neutral-50); border-radius: var(--r-sm); font-size: 11px; color: var(--neutral-500); text-align: left; line-height: 1.6;">
+        <strong style="color: var(--neutral-700);">분기 동작</strong><br>
+        · 6자리 일치 시 → 화면 5(프로필) 진입<br>
+        · 1·2회 실패 시 → 필드 하단 에러 표시<br>
+        · 3회 실패 시 → 5분 자동 잠금
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-id">P-AU-SU-04 · /auth/signup/verify</div>
+</div>
+</body></html>

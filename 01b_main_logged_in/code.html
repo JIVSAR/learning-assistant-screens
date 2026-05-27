@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>학습도우미 — 도전님의 홈</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    @page { size: 1280px 1600px; margin: 0; }
+    body { width: 100%; max-width: 1280px; margin: 0 auto; }
+    .page { width: 100%; max-width: 1280px; min-height: 1600px; position: relative; }
+    .main-content { padding: 0 80px; }
+    .topbar { padding: 0 80px; }
+    .quick-card { background: var(--white); border: 1px solid var(--neutral-200); border-radius: var(--r-md); padding: 20px; text-align: center; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; text-decoration: none; color: inherit; display: block; }
+    .quick-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+    .quick-card .ico { width: 56px; height: 56px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 12px; }
+    .feed-row { display: flex; gap: 12px; padding: 12px; align-items: center; border-bottom: 1px solid var(--neutral-200); transition: background 0.15s; }
+    .feed-row:last-child { border-bottom: 0; }
+    .feed-row:hover { background: var(--neutral-50); }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- TOPBAR (로그인 상태) -->
+  <div class="topbar">
+    <div class="topbar-logo">
+      <span class="dot">📘</span>
+      <span>학습도우미</span>
+    </div>
+    <nav class="topbar-nav">
+      <a href="#" class="active">홈</a>
+      <a href="../02_dashboard/code.html">학습</a>
+      <a href="../05_community/code.html">커뮤니티</a>
+      <a href="../08_store/code.html">상점</a>
+      <a href="#">정보</a>
+      <a href="#">고객센터</a>
+    </nav>
+    <div class="topbar-search">🔍 &nbsp; 검색어를 입력하세요...</div>
+    <div class="topbar-right">
+      <span class="icon-btn" style="position: relative;">🔔<span style="position: absolute; top: -2px; right: -2px; background: var(--red); color: var(--white); border-radius: 50%; min-width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; padding: 0 4px;">3</span></span>
+      <span class="user-chip"><span class="avatar">도</span>도전</span>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <!-- HERO: 인사 + 오늘 학습 요약 -->
+    <section style="margin: 24px 0;">
+      <div style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; margin-bottom: 16px;">
+        <div>
+          <div style="font-size: 13px; color: var(--orange); font-weight: 700; letter-spacing: 0.04em; margin-bottom: 6px;">2026년 5월 26일 화요일</div>
+          <h1 style="font-size: 32px; font-weight: 700; color: var(--navy); margin: 0 0 6px;">안녕하세요, 도전님 👋</h1>
+          <p style="font-size: 15px; color: var(--neutral-600); margin: 0;">오늘 목표 <strong style="color: var(--orange);">3시간</strong> 중 <strong style="color: var(--green);">1시간 20분</strong> 달성. 1시간 40분 남았어요!</p>
+        </div>
+        <a href="../03_session/code.html" class="btn btn-primary btn-lg" style="font-size: 15px;">▶ 학습 세션 시작</a>
+      </div>
+
+      <!-- 빠른 진입 CTA 4개 -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px;">
+        <a href="../02_dashboard/code.html" class="quick-card">
+          <div class="ico" style="background: var(--info-soft); color: var(--info);">📊</div>
+          <div style="font-size: 14px; font-weight: 700; color: var(--navy);">학습 대시보드</div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-top: 4px;">목표·To-Do·진행률</div>
+        </a>
+        <a href="../05_community/code.html" class="quick-card">
+          <div class="ico" style="background: #FEE2E2; color: var(--red);">🔓</div>
+          <div style="font-size: 14px; font-weight: 700; color: var(--navy);">공개 게시판</div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-top: 4px;">오늘 새 흑역사 12건</div>
+        </a>
+        <a href="../05b_qna/code.html" class="quick-card">
+          <div class="ico" style="background: #D1FAE5; color: var(--green);">💬</div>
+          <div style="font-size: 14px; font-weight: 700; color: var(--navy);">QnA 게시판</div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-top: 4px;">미해결 12개 · +30 XP</div>
+        </a>
+        <a href="../08_store/code.html" class="quick-card">
+          <div class="ico" style="background: var(--orange-soft); color: var(--orange);">🛒</div>
+          <div style="font-size: 14px; font-weight: 700; color: var(--navy);">보상 상점</div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-top: 4px;">신규 아이템 7종</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 내 학습 위젯 3개 -->
+    <section class="section">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px;">
+        <h2 style="font-size: 20px; font-weight: 700; color: var(--navy); margin: 0;">📈 내 학습 현황</h2>
+        <a href="../06_stats/code.html" style="font-size: 12px; color: var(--orange); font-weight: 600; text-decoration: none;">전체 통계 보기 →</a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <!-- 일일 진행률 -->
+        <div class="card elevated">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div class="card-title" style="margin-bottom: 0;"><span class="icon">⏱</span> 오늘의 학습</div>
+            <span class="badge badge-info">44%</span>
+          </div>
+          <div style="display: flex; align-items: baseline; gap: 4px;">
+            <div style="font-size: 32px; font-weight: 700; color: var(--navy); font-family: 'Hanken Grotesk', sans-serif; line-height: 1;">1h 20m</div>
+            <div style="font-size: 13px; color: var(--neutral-400);">/ 3h</div>
+          </div>
+          <div class="progress-track" style="margin-top: 12px;">
+            <div class="progress-fill" style="width: 44%;"></div>
+          </div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-top: 8px; font-family: 'JetBrains Mono', monospace;">남은 시간: 1h 40m · 연속 14일째</div>
+        </div>
+
+        <!-- 패널티 위험도 -->
+        <div class="risk-card">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="label">⚠️ 패널티 위험도</div>
+            <span style="background: var(--red); color: var(--white); padding: 3px 8px; border-radius: var(--r-full); font-size: 10px; font-weight: 700;">위험</span>
+          </div>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 12px;">
+            <div class="pct" style="font-size: 32px;">85%</div>
+            <div style="font-size: 12px; color: var(--red); font-weight: 600;">· 8시간 후 공개</div>
+          </div>
+          <div class="progress-track" style="margin-top: 8px; background: rgba(239,68,68,0.15);">
+            <div class="progress-fill red" style="width: 85%;"></div>
+          </div>
+          <a href="../03_session/code.html" class="btn btn-danger btn-sm" style="width: 100%; margin-top: 10px;">지금 학습 시작 →</a>
+        </div>
+
+        <!-- 명예의 전당 내 순위 -->
+        <div class="card elevated" style="background: linear-gradient(180deg, #FFFBEB 0%, #FFF7ED 100%); border-color: #FFD700; border-width: 1.5px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div class="card-title" style="margin-bottom: 0; color: #B45309;"><span class="icon">🏆</span> 이번 주 내 순위</div>
+            <span style="background: #FFD700; color: #92400E; padding: 3px 8px; border-radius: var(--r-full); font-size: 10px; font-weight: 700;">▲ 3</span>
+          </div>
+          <div style="display: flex; align-items: baseline; gap: 6px;">
+            <div style="font-size: 32px; font-weight: 700; color: #B45309; font-family: 'Hanken Grotesk', sans-serif; line-height: 1;">6위</div>
+            <div style="font-size: 12px; color: #92400E;">/ 2,847명</div>
+          </div>
+          <div style="font-size: 11px; color: var(--neutral-600); margin-top: 8px;">TOP 3까지 <strong style="color: var(--orange);">9h 48m</strong> 부족</div>
+          <a href="../05d_hall/code.html" style="display: block; text-align: center; margin-top: 10px; padding: 6px; font-size: 12px; color: #B45309; font-weight: 600; text-decoration: none;">명예의 전당 →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI 추천 학습 -->
+    <section class="section">
+      <div style="background: linear-gradient(135deg, var(--navy) 0%, #0F2447 100%); color: var(--white); border-radius: var(--r-lg); padding: 32px; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(255,92,0,0.2) 0%, transparent 70%); border-radius: 50%;"></div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; position: relative;">
+          <div>
+            <div style="font-size: 11px; letter-spacing: 0.14em; color: var(--orange); font-weight: 700; margin-bottom: 8px;">🤖 AI 학습 분석</div>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0 0 8px; line-height: 1.35;">오늘은 <span style="color: var(--orange);">알고리즘</span> 학습이<br>부족해요</h3>
+            <p style="font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 16px;">최근 3일간 알고리즘 학습 시간이 <strong style="color: var(--orange);">평균 대비 38% 감소</strong>했습니다.<br>오늘 1시간만 보충하면 평균 회복 가능합니다.</p>
+            <a href="../07_ai/code.html" style="display: inline-block; padding: 10px 20px; background: var(--orange); color: var(--white); border-radius: var(--r-md); font-size: 13px; font-weight: 700; text-decoration: none;">AI 도우미와 풀어보기 →</a>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="padding: 12px; background: rgba(255,255,255,0.08); border-radius: var(--r-sm); border-left: 3px solid var(--orange);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <span style="font-size: 13px; font-weight: 700;">DFS / BFS 복습</span>
+                <span style="font-size: 11px; color: var(--orange); font-family: 'JetBrains Mono', monospace;">+50 XP</span>
+              </div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.6);">예상 30분 · 미해결 질문 8개 참고</div>
+            </div>
+            <div style="padding: 12px; background: rgba(255,255,255,0.08); border-radius: var(--r-sm); border-left: 3px solid #10B981;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <span style="font-size: 13px; font-weight: 700;">SQL JOIN 마스터하기</span>
+                <span style="font-size: 11px; color: #10B981; font-family: 'JetBrains Mono', monospace;">+30 XP</span>
+              </div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.6);">예상 25분 · 정처기 D-7 핵심</div>
+            </div>
+            <div style="padding: 12px; background: rgba(255,255,255,0.08); border-radius: var(--r-sm); border-left: 3px solid #86A0CD;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <span style="font-size: 13px; font-weight: 700;">운영체제 스레드 정리</span>
+                <span style="font-size: 11px; color: #86A0CD; font-family: 'JetBrains Mono', monospace;">+20 XP</span>
+              </div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.6);">예상 15분 · 약점 영역 보강</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 친구 활동 + 알림 -->
+    <section class="section">
+      <div class="two-col">
+
+        <!-- 친구 활동 피드 -->
+        <div class="card elevated">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <div class="card-title" style="margin-bottom: 0;"><span class="icon">👥</span> 친구 활동</div>
+            <a href="#" style="font-size: 11px; color: var(--orange); font-weight: 600; text-decoration: none;">친구 추가 →</a>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <div class="feed-row">
+              <span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #FFD700, #F59E0B); display: inline-flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">😎</span>
+              <div style="flex: 1; min-width: 0;">
+                <div style="font-size: 13px;"><strong style="color: var(--navy);">Study_King</strong>님이 <strong style="color: var(--orange);">5시간 연속 학습</strong> 달성</div>
+                <div style="font-size: 11px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace; margin-top: 2px;">방금 전</div>
+              </div>
+              <span class="badge badge-success">+150 XP</span>
+            </div>
+            <div class="feed-row">
+              <span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #F9A8D4, #DB2777); display: inline-flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">🦊</span>
+              <div style="flex: 1; min-width: 0;">
+                <div style="font-size: 13px;"><strong style="color: var(--navy);">방심요정</strong>님이 <strong style="color: var(--green);">올빼미 뱃지</strong> 획득</div>
+                <div style="font-size: 11px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace; margin-top: 2px;">15분 전</div>
+              </div>
+              <span style="font-size: 18px;">🦉</span>
+            </div>
+            <div class="feed-row">
+              <span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #FED7AA, var(--orange)); display: inline-flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">🐱</span>
+              <div style="flex: 1; min-width: 0;">
+                <div style="font-size: 13px;"><strong style="color: var(--navy);">기적의새벽러</strong>님이 <strong style="color: var(--red);">흑역사 공개됨</strong></div>
+                <div style="font-size: 11px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace; margin-top: 2px;">1시간 전</div>
+              </div>
+              <a href="../05_community/code.html" style="font-size: 11px; color: var(--orange); font-weight: 600; text-decoration: none;">보기 →</a>
+            </div>
+            <div class="feed-row">
+              <span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #DDD6FE, #8B5CF6); display: inline-flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">🦄</span>
+              <div style="flex: 1; min-width: 0;">
+                <div style="font-size: 13px;"><strong style="color: var(--navy);">붐바스틱</strong>님이 QnA 답변 <strong style="color: var(--green);">베스트 채택</strong></div>
+                <div style="font-size: 11px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace; margin-top: 2px;">3시간 전</div>
+              </div>
+              <span class="badge badge-success">+30 XP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 미해결 알림 -->
+        <div class="card elevated" style="background: linear-gradient(180deg, var(--orange-soft) 0%, #FFF7ED 100%); border-color: var(--orange); border-width: 1.5px;">
+          <div class="card-title" style="color: var(--orange);"><span class="icon">🔔</span> 알림 <span style="background: var(--red); color: var(--white); padding: 1px 7px; border-radius: 999px; font-size: 10px; font-weight: 700; margin-left: 4px;">3</span></div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="padding: 12px; background: var(--white); border-radius: var(--r-sm); border-left: 3px solid var(--orange);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--navy);">💡 새 뱃지 미수령</div>
+                <span style="font-size: 10px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace;">2시간 전</span>
+              </div>
+              <div style="font-size: 11px; color: var(--neutral-600); line-height: 1.5;">"올빼미 학습자" 뱃지가 발급되었습니다. 상점에서 수령하세요.</div>
+            </div>
+
+            <div style="padding: 12px; background: var(--white); border-radius: var(--r-sm); border-left: 3px solid var(--info);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--navy);">💬 QnA 답변 도착</div>
+                <span style="font-size: 10px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace;">5시간 전</span>
+              </div>
+              <div style="font-size: 11px; color: var(--neutral-600); line-height: 1.5;">"SQL JOIN 차이" 질문에 답변 3개가 달렸어요. 베스트 답변을 채택해 주세요.</div>
+            </div>
+
+            <div style="padding: 12px; background: var(--white); border-radius: var(--r-sm); border-left: 3px solid var(--red);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--red);">⚠️ 흑역사 공개 임박</div>
+                <span style="font-size: 10px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace;">방금 전</span>
+              </div>
+              <div style="font-size: 11px; color: var(--neutral-600); line-height: 1.5;">목표 미달 시 <strong style="color: var(--red);">8시간 후</strong> 봉인소가 자동 공개됩니다. 지금 학습을 시작하세요.</div>
+            </div>
+          </div>
+          <a href="#" style="display: block; text-align: center; margin-top: 12px; font-size: 12px; color: var(--orange); font-weight: 600; text-decoration: none;">전체 알림 보기 →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 이벤트 / 공지 -->
+    <section class="section">
+      <div class="card elevated">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div class="card-title" style="margin-bottom: 0;"><span class="icon">📢</span> 진행 중 이벤트 / 공지</div>
+          <a href="#" style="font-size: 11px; color: var(--orange); font-weight: 600; text-decoration: none;">전체 보기 →</a>
+        </div>
+        <div class="notice-list">
+          <div class="notice-item">
+            <span class="tag event">이벤트</span>
+            <div>
+              <div class="text">시험 기간 챌린지 — "이번 주 50시간 인증"</div>
+              <div class="date">6/1 ~ 6/15 진행 · 참여자 1,250명 · <strong style="color: var(--orange);">참여하면 +500 XP</strong></div>
+            </div>
+          </div>
+          <div class="notice-item">
+            <span class="tag">공지</span>
+            <div>
+              <div class="text">안전 모니터링 시스템 v2.0 업데이트</div>
+              <div class="date">2026-05-24</div>
+            </div>
+          </div>
+          <div class="notice-item">
+            <span class="tag event">이벤트</span>
+            <div>
+              <div class="text">친구 초대 시 양쪽 모두 1주 프리미엄 무료</div>
+              <div class="date">상시 진행</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer" style="margin-top: 48px;">
+    <div>© 2026 학습도우미 (LearnGuard). All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#">서비스 소개</a>
+      <a href="#">이용약관</a>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">고객센터</a>
+    </div>
+  </div>
+
+  <div class="screen-id">P-MN-01 · / (로그인 상태)</div>
+</div>
+</body>
+</html>

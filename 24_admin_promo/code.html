@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>광고·이벤트 관리 — 학습도우미 ADMIN</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/admin.css">
+<style>
+  @page { size: 1280px 1000px; margin: 0; }
+  body { width: 100%; max-width: 1280px; margin: 0 auto; }
+  .page { width: 100%; max-width: 1280px; min-height: 1000px; position: relative; }
+  .campaign-card { background: var(--white); border: 1px solid var(--neutral-200); border-radius: var(--r-md); padding: 20px; display: flex; gap: 16px; }
+  .campaign-thumb { width: 120px; height: 80px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-size: 36px; flex-shrink: 0; }
+</style></head>
+<body>
+<div class="page">
+  <div class="admin-topbar">
+    <div class="brand">📘 학습도우미<span class="badge-admin">ADMIN</span></div>
+    <div class="right"><span>👤 관리자 김</span><span>⚙️</span><span>🚪 로그아웃</span></div>
+  </div>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-section">OVERVIEW</div>
+      <a href="#"><span class="icon">📊</span>대시보드</a>
+      <div class="admin-sidebar-section">MANAGEMENT</div>
+      <a href="#"><span class="icon">👥</span>회원 관리</a>
+      <a href="#"><span class="icon">📝</span>게시판 관리<span class="count">12</span></a>
+      <a href="#"><span class="icon">🛒</span>상점 아이템</a>
+      <a href="#" class="active"><span class="icon">📢</span>광고·이벤트</a>
+      <a href="#"><span class="icon">💬</span>1:1 문의<span class="count">23</span></a>
+      <div class="admin-sidebar-section">SYSTEM</div>
+      <a href="#"><span class="icon">🔐</span>권한 관리</a>
+      <a href="#"><span class="icon">📜</span>감사 로그</a>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-page-title">
+        <div>
+          <h1>📢 광고·이벤트 캠페인</h1>
+          <p>현재 진행 중 4건 · 예약된 캠페인 3건 · 종료 12건</p>
+        </div>
+        <a href="#" class="btn btn-primary btn-sm">+ 새 캠페인 만들기</a>
+      </div>
+
+      <!-- Tabs -->
+      <div style="display: flex; gap: 6px; margin-bottom: 16px;">
+        <span style="padding: 8px 14px; background: var(--navy); color: var(--white); border-radius: var(--r-sm); font-size: 13px; font-weight: 700;">진행 중 4</span>
+        <span style="padding: 8px 14px; background: var(--white); border: 1px solid var(--neutral-200); border-radius: var(--r-sm); font-size: 13px;">예약 3</span>
+        <span style="padding: 8px 14px; background: var(--white); border: 1px solid var(--neutral-200); border-radius: var(--r-sm); font-size: 13px;">종료 12</span>
+      </div>
+
+      <!-- Cards -->
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <!-- Campaign 1 -->
+        <div class="campaign-card">
+          <div class="campaign-thumb" style="background: linear-gradient(135deg, var(--orange-soft), #FED7AA); color: var(--orange);">🔥</div>
+          <div style="flex: 1;">
+            <div style="display: flex; gap: 8px; margin-bottom: 6px;">
+              <span class="badge badge-success">✅ 진행중</span>
+              <span class="badge badge-info">이벤트</span>
+              <span class="badge" style="background: var(--orange-soft); color: var(--orange);">메인 + 대시보드 상단</span>
+            </div>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">시험 기간 챌린지 — "이번 주 50시간 인증"</h3>
+            <p style="font-size: 12px; color: var(--neutral-500); margin-bottom: 8px;">2026/06/01 ~ 2026/06/15 · D-19</p>
+            <div style="display: flex; gap: 16px; font-size: 12px;">
+              <div><strong>노출:</strong> 152,408</div>
+              <div><strong>클릭:</strong> 12,650 <span style="color: var(--green); font-weight: 700;">(CTR 8.3%)</span></div>
+              <div><strong>전환:</strong> 1,250건 <span style="color: var(--green); font-weight: 700;">(CVR 9.9%)</span></div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <a href="#" class="btn btn-secondary btn-sm">편집</a>
+            <a href="#" class="btn btn-ghost btn-sm">⏸ 일시중지</a>
+          </div>
+        </div>
+
+        <!-- Campaign 2 -->
+        <div class="campaign-card">
+          <div class="campaign-thumb" style="background: linear-gradient(135deg, var(--info-soft), #DBEAFE); color: var(--info);">📢</div>
+          <div style="flex: 1;">
+            <div style="display: flex; gap: 8px; margin-bottom: 6px;">
+              <span class="badge badge-success">✅ 진행중</span>
+              <span class="badge badge-info">공지</span>
+              <span class="badge" style="background: var(--neutral-100); color: var(--neutral-700);">공지사항</span>
+            </div>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">안전 모니터링 시스템 v2.0 업데이트</h3>
+            <p style="font-size: 12px; color: var(--neutral-500); margin-bottom: 8px;">2026/05/24 ~ 2026/06/24 · D-29</p>
+            <div style="display: flex; gap: 16px; font-size: 12px;">
+              <div><strong>조회:</strong> 8,420</div>
+              <div><strong>읽음 표시:</strong> 6,150 (73%)</div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <a href="#" class="btn btn-secondary btn-sm">편집</a>
+            <a href="#" class="btn btn-ghost btn-sm">⏸ 일시중지</a>
+          </div>
+        </div>
+
+        <!-- Campaign 3 -->
+        <div class="campaign-card">
+          <div class="campaign-thumb" style="background: linear-gradient(135deg, var(--navy), #2D476F); color: var(--white);">🎁</div>
+          <div style="flex: 1;">
+            <div style="display: flex; gap: 8px; margin-bottom: 6px;">
+              <span class="badge badge-success">✅ 진행중</span>
+              <span class="badge badge-warning">프로모션</span>
+              <span class="badge" style="background: var(--orange-soft); color: var(--orange);">팝업 모달</span>
+            </div>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">친구 초대 시 양쪽 모두 1주 프리미엄 무료</h3>
+            <p style="font-size: 12px; color: var(--neutral-500); margin-bottom: 8px;">상시 진행 · 시작 2026/01/01</p>
+            <div style="display: flex; gap: 16px; font-size: 12px;">
+              <div><strong>발송 초대:</strong> 4,820</div>
+              <div><strong>가입 전환:</strong> 1,038 <span style="color: var(--green); font-weight: 700;">(21.5%)</span></div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <a href="#" class="btn btn-secondary btn-sm">편집</a>
+            <a href="#" class="btn btn-ghost btn-sm">⏸ 일시중지</a>
+          </div>
+        </div>
+
+        <!-- Campaign 4 (scheduled) -->
+        <div class="campaign-card" style="background: var(--neutral-50);">
+          <div class="campaign-thumb" style="background: var(--white); border: 1.5px dashed var(--neutral-300); color: var(--neutral-400);">⏳</div>
+          <div style="flex: 1;">
+            <div style="display: flex; gap: 8px; margin-bottom: 6px;">
+              <span class="badge badge-warning">⏰ 예약</span>
+              <span class="badge badge-info">이벤트</span>
+            </div>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">신규 상점 아이템 7종 출시 이벤트</h3>
+            <p style="font-size: 12px; color: var(--neutral-500);">시작 예정: 2026/06/03 09:00</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <a href="#" class="btn btn-primary btn-sm">▶ 즉시 시작</a>
+            <a href="#" class="btn btn-ghost btn-sm">편집</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="screen-id">A-6 · /admin/promo</div>
+</div>
+</body></html>

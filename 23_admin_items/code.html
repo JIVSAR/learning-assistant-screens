@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>상점 아이템 관리 — 학습도우미 ADMIN</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/admin.css">
+<style>
+  @page { size: 1280px 900px; margin: 0; }
+  body { width: 100%; max-width: 1280px; margin: 0 auto; }
+  .page { width: 100%; max-width: 1280px; min-height: 900px; position: relative; }
+  .toggle { width: 36px; height: 20px; background: var(--green); border-radius: 999px; position: relative; display: inline-block; }
+  .toggle::after { content:''; width: 16px; height: 16px; background: var(--white); border-radius: 50%; position: absolute; top: 2px; right: 2px; }
+  .toggle.off { background: var(--neutral-300); }
+  .toggle.off::after { right: auto; left: 2px; }
+</style></head>
+<body>
+<div class="page">
+  <div class="admin-topbar">
+    <div class="brand">📘 학습도우미<span class="badge-admin">ADMIN</span></div>
+    <div class="right"><span>👤 관리자 김</span><span>⚙️</span><span>🚪 로그아웃</span></div>
+  </div>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-section">OVERVIEW</div>
+      <a href="#"><span class="icon">📊</span>대시보드</a>
+      <div class="admin-sidebar-section">MANAGEMENT</div>
+      <a href="#"><span class="icon">👥</span>회원 관리</a>
+      <a href="#"><span class="icon">📝</span>게시판 관리<span class="count">12</span></a>
+      <a href="#" class="active"><span class="icon">🛒</span>상점 아이템</a>
+      <a href="#"><span class="icon">📢</span>광고·이벤트</a>
+      <a href="#"><span class="icon">💬</span>1:1 문의<span class="count">23</span></a>
+      <div class="admin-sidebar-section">SYSTEM</div>
+      <a href="#"><span class="icon">🔐</span>권한 관리</a>
+      <a href="#"><span class="icon">📜</span>감사 로그</a>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-page-title">
+        <div>
+          <h1>🛒 상점 아이템 관리</h1>
+          <p>총 32종 활성 · 누적 판매 12,438건 · 이번 달 매출 1.2M ₩</p>
+        </div>
+        <a href="#" class="btn btn-primary btn-sm">+ 새 아이템 등록</a>
+      </div>
+
+      <!-- Tabs -->
+      <div style="display: flex; gap: 4px; margin-bottom: 16px;">
+        <span style="padding: 6px 14px; background: var(--navy); color: var(--white); border-radius: var(--r-sm); font-size: 12px; font-weight: 700;">전체 32</span>
+        <span style="padding: 6px 14px; background: var(--white); border: 1px solid var(--neutral-200); border-radius: var(--r-sm); font-size: 12px;">아바타 8</span>
+        <span style="padding: 6px 14px; background: var(--white); border: 1px solid var(--neutral-200); border-radius: var(--r-sm); font-size: 12px;">뱃지 12</span>
+        <span style="padding: 6px 14px; background: var(--white); border: 1px solid var(--neutral-200); border-radius: var(--r-sm); font-size: 12px;">쿠폰 7</span>
+        <span style="padding: 6px 14px; background: var(--white); border: 1px solid var(--neutral-200); border-radius: var(--r-sm); font-size: 12px;">프리미엄 3</span>
+        <span style="padding: 6px 14px; background: var(--white); border: 1px solid var(--neutral-200); border-radius: var(--r-sm); font-size: 12px;">비활성 2</span>
+      </div>
+
+      <table class="admin-table">
+        <thead>
+          <tr><th style="width: 50px;">ID</th><th style="width: 50px;"></th><th>이름</th><th style="width: 100px;">카테고리</th><th style="width: 90px;">가격</th><th style="width: 90px;">재고</th><th style="width: 90px;">판매 수</th><th style="width: 100px;">매출</th><th style="width: 70px;">상태</th><th style="width: 80px;">작업</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td style="font-size: 22px;">🦊</td><td><strong>Gold Fox Avatar</strong><br><span style="font-size: 11px; color: var(--neutral-500);">2026-04-15 등록</span></td><td><span class="badge badge-info">아바타</span></td><td><strong>100 P</strong></td><td>무제한</td><td>1,234</td><td>123,400 P</td><td><span class="toggle"></span></td><td>편집 ⋮</td></tr>
+          <tr><td>2</td><td style="font-size: 22px;">🎓</td><td><strong>Graduation Cap Badge</strong></td><td><span class="badge badge-info">뱃지</span></td><td><strong>50 P</strong></td><td>무제한</td><td>856</td><td>42,800 P</td><td><span class="toggle"></span></td><td>편집 ⋮</td></tr>
+          <tr><td>3</td><td style="font-size: 22px;">🌙</td><td><strong>Dark Mode Theme</strong></td><td><span class="badge badge-info">아바타</span></td><td><strong>200 P</strong></td><td>무제한</td><td>720</td><td>144,000 P</td><td><span class="toggle"></span></td><td>편집 ⋮</td></tr>
+          <tr><td>4</td><td style="font-size: 22px;">📚</td><td><strong>Online Class 20% Discount</strong><br><span style="font-size: 11px; color: var(--neutral-500);">제휴: 해커스/에듀윌</span></td><td><span class="badge badge-success">쿠폰</span></td><td><strong>500 P</strong></td><td>100/월</td><td>45</td><td>22,500 P</td><td><span class="toggle"></span></td><td>편집 ⋮</td></tr>
+          <tr><td>5</td><td style="font-size: 22px;">💎</td><td><strong>Premium 1 Week</strong></td><td><span class="badge badge-warning">프리미엄</span></td><td><strong>300 P</strong></td><td>무제한</td><td>2,180</td><td>654,000 P</td><td><span class="toggle"></span></td><td>편집 ⋮</td></tr>
+          <tr><td>6</td><td style="font-size: 22px;">📖</td><td><strong>Book Voucher 10,000원</strong></td><td><span class="badge badge-success">쿠폰</span></td><td><strong>1,500 P</strong></td><td><span style="color: var(--red);">12 / 50</span></td><td>38</td><td>57,000 P</td><td><span class="toggle"></span></td><td>편집 ⋮</td></tr>
+          <tr><td>7</td><td style="font-size: 22px;">☕</td><td><strong>Cafe Coupon (스타벅스)</strong></td><td><span class="badge badge-success">쿠폰</span></td><td><strong>800 P</strong></td><td>50/주</td><td>156</td><td>124,800 P</td><td><span class="toggle"></span></td><td>편집 ⋮</td></tr>
+          <tr><td>8</td><td style="font-size: 22px;">🎁</td><td><strong>Random Point Box</strong><br><span style="font-size: 11px; color: var(--neutral-500);">50~500 P 랜덤 (평균 240 P)</span></td><td><span class="badge badge-info">기타</span></td><td><strong>100 P</strong></td><td>무제한</td><td>3,420</td><td>342,000 P</td><td><span class="toggle"></span></td><td>편집 ⋮</td></tr>
+          <tr style="opacity: 0.5;"><td>9</td><td style="font-size: 22px;">🌟</td><td><strong>Special Event Pack (시즌오프)</strong></td><td><span class="badge badge-warning">프리미엄</span></td><td>700 P</td><td>판매중지</td><td>522</td><td>365,400 P</td><td><span class="toggle off"></span></td><td>편집 ⋮</td></tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+  <div class="screen-id">A-5 · /admin/items</div>
+</div>
+</body></html>

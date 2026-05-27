@@ -1,0 +1,90 @@
+/* ──────────────────────────────────────────────
+   Admin Console Shared Styles
+   ────────────────────────────────────────────── */
+
+.admin-topbar {
+  background: #0F172A;
+  color: var(--white);
+  padding: 0 32px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin-topbar .brand { font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; font-size: 16px; }
+.admin-topbar .brand .badge-admin { background: var(--red); color: var(--white); padding: 2px 8px; border-radius: var(--r-sm); font-size: 10px; margin-left: 8px; letter-spacing: 0.1em; }
+.admin-topbar .right { display: flex; gap: 16px; align-items: center; font-size: 13px; color: rgba(255,255,255,0.7); }
+
+.admin-shell { display: table; width: 100%; table-layout: fixed; }
+.admin-sidebar {
+  width: 240px;
+  background: #1E293B;
+  color: var(--white);
+  display: table-cell;
+  vertical-align: top;
+  padding: 24px 12px;
+}
+.admin-sidebar-section { font-size: 10px; letter-spacing: 0.15em; color: rgba(255,255,255,0.4); text-transform: uppercase; padding: 12px 16px 8px; font-weight: 700; }
+.admin-sidebar a {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: var(--r-sm);
+  color: rgba(255,255,255,0.7); text-decoration: none;
+  font-size: 13px; font-weight: 500;
+}
+.admin-sidebar a.active { background: rgba(255,92,0,0.15); color: var(--orange); font-weight: 700; }
+.admin-sidebar a .icon { width: 18px; text-align: center; }
+.admin-sidebar a .count { margin-left: auto; background: var(--red); color: var(--white); font-size: 10px; padding: 2px 6px; border-radius: var(--r-full); font-weight: 700; }
+
+.admin-main { display: table-cell; vertical-align: top; padding: 24px 32px; background: #F8F9FC; }
+
+.admin-page-title { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.admin-page-title h1 { font-size: 22px; font-weight: 700; color: #0F172A; }
+.admin-page-title p { font-size: 13px; color: var(--neutral-500); margin-top: 4px; }
+
+/* Table */
+.admin-table {
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--r-md);
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+}
+.admin-table th {
+  background: var(--neutral-50);
+  padding: 12px 16px;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+  text-align: left;
+  border-bottom: 1px solid var(--neutral-200);
+}
+.admin-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--neutral-200);
+  color: var(--neutral-700);
+}
+.admin-table tr:last-child td { border-bottom: 0; }
+.admin-table tr:hover td { background: var(--neutral-50); }
+
+.admin-kpi-card {
+  background: var(--white);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--r-md);
+  padding: 20px;
+}
+.admin-kpi-card .label { font-size: 12px; color: var(--neutral-500); font-weight: 600; }
+.admin-kpi-card .value { font-family: 'Hanken Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #0F172A; margin: 8px 0 4px; }
+.admin-kpi-card .delta { font-size: 12px; color: var(--green); font-weight: 700; }
+.admin-kpi-card .delta.down { color: var(--red); }
+
+@media (max-width: 480px) {
+  .admin-shell { display: block !important; }
+  .admin-sidebar { display: none !important; }
+  .admin-main { display: block !important; padding: 16px !important; }
+  .admin-topbar { padding: 0 16px !important; }
+  .admin-topbar .right { gap: 8px !important; font-size: 11px !important; }
+}

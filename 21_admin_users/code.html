@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>회원 관리 — 학습도우미 ADMIN</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/admin.css">
+<style>
+  @page { size: 1280px 950px; margin: 0; }
+  body { width: 100%; max-width: 1280px; margin: 0 auto; }
+  .page { width: 100%; max-width: 1280px; min-height: 950px; position: relative; }
+</style></head>
+<body>
+<div class="page">
+  <div class="admin-topbar">
+    <div class="brand">📘 학습도우미<span class="badge-admin">ADMIN</span></div>
+    <div class="right">
+      <span>👤 관리자 김 (Super Admin)</span>
+      <span>⚙️</span><span>🚪 로그아웃</span>
+    </div>
+  </div>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-section">OVERVIEW</div>
+      <a href="#"><span class="icon">📊</span>대시보드</a>
+      <div class="admin-sidebar-section">MANAGEMENT</div>
+      <a href="#" class="active"><span class="icon">👥</span>회원 관리</a>
+      <a href="#"><span class="icon">📝</span>게시판 관리<span class="count">12</span></a>
+      <a href="#"><span class="icon">🛒</span>상점 아이템</a>
+      <a href="#"><span class="icon">📢</span>광고·이벤트</a>
+      <a href="#"><span class="icon">💬</span>1:1 문의<span class="count">23</span></a>
+      <div class="admin-sidebar-section">SYSTEM</div>
+      <a href="#"><span class="icon">🔐</span>권한 관리</a>
+      <a href="#"><span class="icon">📜</span>감사 로그</a>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-page-title">
+        <div>
+          <h1>👥 회원 관리</h1>
+          <p>총 18,250명 · 오늘 신규 +185명 · 정지 상태 12명</p>
+        </div>
+        <a href="#" class="btn btn-primary btn-sm">+ 수동 회원 추가</a>
+      </div>
+
+      <!-- Filter bar -->
+      <div style="display: flex; gap: 8px; margin-bottom: 16px; background: var(--white); padding: 12px; border-radius: var(--r-md); border: 1px solid var(--neutral-200);">
+        <input style="flex: 1; padding: 8px 14px; border: 1px solid var(--neutral-200); border-radius: var(--r-sm); font-size: 13px;" value="🔍 닉네임 / 이메일 / ID 검색..." readonly>
+        <select style="padding: 8px 14px; border: 1px solid var(--neutral-200); border-radius: var(--r-sm); font-size: 13px;"><option>전체 상태</option></select>
+        <select style="padding: 8px 14px; border: 1px solid var(--neutral-200); border-radius: var(--r-sm); font-size: 13px;"><option>가입일: 전체</option></select>
+        <select style="padding: 8px 14px; border: 1px solid var(--neutral-200); border-radius: var(--r-sm); font-size: 13px;"><option>등급: 전체</option></select>
+        <a href="#" class="btn btn-secondary btn-sm">📥 내보내기</a>
+      </div>
+
+      <!-- Users table -->
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th style="width: 60px;">ID</th>
+            <th>닉네임</th>
+            <th>이메일</th>
+            <th style="width: 90px;">가입일</th>
+            <th style="width: 80px;">등급</th>
+            <th style="width: 120px;">학습 시간</th>
+            <th style="width: 100px;">상태</th>
+            <th style="width: 60px;"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background: var(--orange-soft);">
+            <td><strong>1234</strong></td>
+            <td><strong>도전</strong> ⭐ <span style="font-size: 10px; color: var(--orange); font-weight: 700;">FOCUS</span></td>
+            <td>kdj@univ.ac.kr</td>
+            <td>04/11</td>
+            <td><span class="badge badge-warning">Lv.12</span></td>
+            <td>142h 30m</td>
+            <td><span class="badge badge-success">활성</span></td>
+            <td>⋮</td>
+          </tr>
+          <tr>
+            <td>1235</td>
+            <td>math_king</td>
+            <td>km@gmail.com</td>
+            <td>04/12</td>
+            <td><span class="badge badge-info">Lv.8</span></td>
+            <td>89h 15m</td>
+            <td><span class="badge badge-success">활성</span></td>
+            <td>⋮</td>
+          </tr>
+          <tr>
+            <td>1236</td>
+            <td>user_X</td>
+            <td>ux@naver.com</td>
+            <td>04/13</td>
+            <td><span class="badge badge-info">Lv.5</span></td>
+            <td>32h 10m</td>
+            <td><span class="badge badge-danger">신고 3건</span></td>
+            <td>⋮</td>
+          </tr>
+          <tr>
+            <td>1237</td>
+            <td>studious</td>
+            <td>st@kakao.com</td>
+            <td>04/14</td>
+            <td><span class="badge badge-warning">Lv.15</span></td>
+            <td>205h 45m</td>
+            <td><span class="badge badge-success">프리미엄</span></td>
+            <td>⋮</td>
+          </tr>
+          <tr>
+            <td>1238</td>
+            <td>night_owl</td>
+            <td>no@gmail.com</td>
+            <td>04/15</td>
+            <td><span class="badge badge-info">Lv.7</span></td>
+            <td>67h 00m</td>
+            <td><span class="badge badge-danger">제재중 (7일)</span></td>
+            <td>⋮</td>
+          </tr>
+          <tr>
+            <td>1239</td>
+            <td>silent_loser</td>
+            <td>sl@daum.net</td>
+            <td>04/16</td>
+            <td><span class="badge badge-info">Lv.3</span></td>
+            <td>18h 22m</td>
+            <td><span class="badge badge-success">활성</span></td>
+            <td>⋮</td>
+          </tr>
+          <tr>
+            <td>1240</td>
+            <td>study_king</td>
+            <td>sk@univ.ac.kr</td>
+            <td>04/16</td>
+            <td><span class="badge badge-warning">Lv.18</span></td>
+            <td>312h 5m</td>
+            <td><span class="badge badge-success">프리미엄</span></td>
+            <td>⋮</td>
+          </tr>
+          <tr>
+            <td>1241</td>
+            <td>code_warrior</td>
+            <td>cw@gmail.com</td>
+            <td>04/17</td>
+            <td><span class="badge badge-info">Lv.6</span></td>
+            <td>42h 30m</td>
+            <td><span class="badge badge-success">활성</span></td>
+            <td>⋮</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Pagination -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; font-size: 12px;">
+        <div style="color: var(--neutral-500);">총 18,250명 중 1-8 표시</div>
+        <div style="display: flex; gap: 4px;">
+          <span style="padding: 6px 12px; border: 1px solid var(--neutral-200); border-radius: var(--r-sm); background: var(--white);">‹</span>
+          <span style="padding: 6px 12px; background: var(--navy); color: var(--white); border-radius: var(--r-sm); font-weight: 700;">1</span>
+          <span style="padding: 6px 12px; border: 1px solid var(--neutral-200); border-radius: var(--r-sm); background: var(--white);">2</span>
+          <span style="padding: 6px 12px; border: 1px solid var(--neutral-200); border-radius: var(--r-sm); background: var(--white);">3</span>
+          <span style="padding: 6px 12px; color: var(--neutral-400);">...</span>
+          <span style="padding: 6px 12px; border: 1px solid var(--neutral-200); border-radius: var(--r-sm); background: var(--white);">2,281</span>
+          <span style="padding: 6px 12px; border: 1px solid var(--neutral-200); border-radius: var(--r-sm); background: var(--white);">›</span>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="screen-id">A-3 · /admin/users</div>
+</div>
+</body></html>

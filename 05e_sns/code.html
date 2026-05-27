@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>SNS 연동 — 학습도우미</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    @page { size: 1280px 1100px; margin: 0; }
+    body { width: 100%; max-width: 1280px; margin: 0 auto; }
+    .page { width: 100%; max-width: 1280px; min-height: 1100px; position: relative; }
+    .sns-card { background: var(--white); border: 1px solid var(--neutral-200); border-radius: var(--r-md); padding: 20px; transition: transform 0.15s, box-shadow 0.15s; }
+    .sns-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+    .sns-card.connected { border-color: var(--green); }
+    .sns-logo { width: 56px; height: 56px; border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; font-size: 28px; color: var(--white); }
+    .toggle-pill { width: 44px; height: 24px; background: var(--neutral-200); border-radius: 999px; position: relative; cursor: pointer; transition: background 0.2s; }
+    .toggle-pill.on { background: var(--green); }
+    .toggle-pill::after { content: ''; width: 20px; height: 20px; background: var(--white); border-radius: 50%; position: absolute; top: 2px; left: 2px; transition: left 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+    .toggle-pill.on::after { left: 22px; }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div class="topbar-logo"><span class="dot">📘</span><span>학습도우미</span></div>
+    <nav class="topbar-nav">
+      <a href="#">홈</a><a href="#">학습</a>
+      <a href="#" class="active">커뮤니티</a>
+      <a href="#">상점</a><a href="#">정보</a><a href="#">고객센터</a>
+    </nav>
+    <div class="topbar-search">🔍 검색</div>
+    <div class="topbar-right">
+      <span class="icon-btn">🔔</span>
+      <span class="user-chip"><span class="avatar">도</span>도전</span>
+    </div>
+  </div>
+
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="sidebar-user">
+        <span class="avatar">도</span>
+        <div class="info"><div class="name">도전</div><div class="meta">마스터 학습자 · Lv. 12</div></div>
+      </div>
+      <div style="font-size: 10px; font-weight: 700; color: var(--neutral-400); letter-spacing: 0.08em; padding: 16px 16px 8px; text-transform: uppercase;">커뮤니티</div>
+      <nav class="sidebar-nav">
+        <a href="../05_community/code.html"><span class="icon">🔓</span>공개 게시판</a>
+        <a href="../05b_qna/code.html"><span class="icon">💬</span>QnA 게시판</a>
+        <a href="../05c_free/code.html"><span class="icon">📝</span>자유 게시판</a>
+        <a href="../05d_hall/code.html"><span class="icon">🏆</span>명예의 전당</a>
+        <a href="#" class="active"><span class="icon">🔗</span>SNS 연동</a>
+      </nav>
+      <a href="#" class="sidebar-cta" style="margin-top: 20px;">+ SNS 연결</a>
+    </aside>
+
+    <main class="main">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+        <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;">
+          <h1 class="h1" style="margin: 0;">🔗 SNS 연동</h1>
+          <span style="font-size: 13px; color: #1E40AF; font-weight: 600;">· 패널티 자동 공개 대상 설정</span>
+        </div>
+        <span class="btn btn-primary btn-sm" aria-hidden="true" style="visibility: hidden; position: relative; top: 24px;">+</span>
+      </div>
+      <p class="body" style="color: var(--neutral-500); margin-bottom: 16px;">SNS 계정을 연결하면 학습 목표 미달 시 흑역사가 지인들에게 자동 공개됩니다. 자발적 압박 장치로 활용하세요.</p>
+
+      <!-- 안전 안내 배너 -->
+      <div style="background: linear-gradient(90deg, var(--info-soft) 0%, #EFF6FF 100%); border-left: 4px solid var(--info); padding: 14px 18px; border-radius: var(--r-sm); margin-bottom: 20px; display: flex; gap: 14px; align-items: flex-start;">
+        <span style="font-size: 22px;">🔐</span>
+        <div style="flex: 1;">
+          <div style="font-weight: 700; font-size: 13px; color: #1E40AF; margin-bottom: 4px;">SNS 연동은 OAuth 2.0 기반으로 안전하게 처리됩니다</div>
+          <div style="font-size: 12px; color: #1E40AF; line-height: 1.5;">학습도우미는 SNS 비밀번호를 저장하지 않으며, "게시물 작성 권한"만 요청합니다. 언제든 SNS 설정에서 권한 해제 가능합니다.</div>
+        </div>
+        <a href="#" style="font-size: 11px; color: #1E40AF; font-weight: 600; text-decoration: underline; flex-shrink: 0;">자세히 →</a>
+      </div>
+
+      <!-- 본문 + 우측 사이드바 -->
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px;">
+        <!-- SNS 계정 카드 -->
+        <div>
+          <h3 style="font-size: 14px; font-weight: 700; margin-bottom: 12px;">연동 가능한 SNS</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <!-- 인스타그램 (연결됨) -->
+            <div class="sns-card connected">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <div class="sns-logo" style="background: linear-gradient(135deg, #833AB4, #FD1D1D, #FCB045);">📷</div>
+                <div style="flex: 1;">
+                  <div style="font-size: 15px; font-weight: 700;">Instagram</div>
+                  <div style="font-size: 11px; color: var(--green); font-weight: 600;">● 연결됨 · @do_jeon_kr</div>
+                </div>
+              </div>
+              <div style="padding: 10px 12px; background: var(--neutral-50); border-radius: var(--r-sm); margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 12px; color: var(--neutral-700);">패널티 시 자동 게시</span>
+                  <div class="toggle-pill on"></div>
+                </div>
+              </div>
+              <div style="display: flex; gap: 6px;">
+                <a href="#" class="btn btn-secondary btn-sm" style="flex: 1; text-align: center;">설정</a>
+                <a href="#" style="padding: 6px 12px; font-size: 12px; color: var(--red); border: 1px solid var(--neutral-200); border-radius: var(--r-sm); text-decoration: none;">연결 해제</a>
+              </div>
+            </div>
+
+            <!-- 카카오톡 (연결됨) -->
+            <div class="sns-card connected">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <div class="sns-logo" style="background: #FEE500; color: #000;">💬</div>
+                <div style="flex: 1;">
+                  <div style="font-size: 15px; font-weight: 700;">카카오톡</div>
+                  <div style="font-size: 11px; color: var(--green); font-weight: 600;">● 연결됨 · 도전</div>
+                </div>
+              </div>
+              <div style="padding: 10px 12px; background: var(--neutral-50); border-radius: var(--r-sm); margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 12px; color: var(--neutral-700);">친구 톡으로 전송</span>
+                  <div class="toggle-pill on"></div>
+                </div>
+              </div>
+              <div style="display: flex; gap: 6px;">
+                <a href="#" class="btn btn-secondary btn-sm" style="flex: 1; text-align: center;">설정</a>
+                <a href="#" style="padding: 6px 12px; font-size: 12px; color: var(--red); border: 1px solid var(--neutral-200); border-radius: var(--r-sm); text-decoration: none;">연결 해제</a>
+              </div>
+            </div>
+
+            <!-- 트위터/X (미연결) -->
+            <div class="sns-card">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <div class="sns-logo" style="background: #000;">𝕏</div>
+                <div style="flex: 1;">
+                  <div style="font-size: 15px; font-weight: 700;">X (Twitter)</div>
+                  <div style="font-size: 11px; color: var(--neutral-400);">미연결</div>
+                </div>
+              </div>
+              <div style="font-size: 11px; color: var(--neutral-500); line-height: 1.5; margin-bottom: 12px; padding: 10px 12px; background: var(--neutral-50); border-radius: var(--r-sm);">
+                연결 시 트윗으로 흑역사 자동 게시 가능. 팔로워 대상 압박 효과.
+              </div>
+              <a href="#" class="btn btn-primary btn-sm" style="width: 100%; text-align: center;">+ 연결하기</a>
+            </div>
+
+            <!-- 디스코드 (미연결) -->
+            <div class="sns-card">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <div class="sns-logo" style="background: #5865F2;">🎮</div>
+                <div style="flex: 1;">
+                  <div style="font-size: 15px; font-weight: 700;">Discord</div>
+                  <div style="font-size: 11px; color: var(--neutral-400);">미연결</div>
+                </div>
+              </div>
+              <div style="font-size: 11px; color: var(--neutral-500); line-height: 1.5; margin-bottom: 12px; padding: 10px 12px; background: var(--neutral-50); border-radius: var(--r-sm);">
+                선택한 서버 채널에 흑역사 자동 게시. 스터디 그룹 압박용으로 적합.
+              </div>
+              <a href="#" class="btn btn-primary btn-sm" style="width: 100%; text-align: center;">+ 연결하기</a>
+            </div>
+          </div>
+
+          <!-- 지인 패널티 공개 대상 -->
+          <h3 style="font-size: 14px; font-weight: 700; margin: 24px 0 12px;">👥 지인 패널티 공개 대상</h3>
+          <div class="card elevated">
+            <p style="font-size: 12px; color: var(--neutral-500); margin-bottom: 14px;">목표 미달 시 흑역사를 받게 될 지인 목록입니다. 압박이 강해지려면 가까운 사람을 추가하세요.</p>
+
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: var(--neutral-50); border-radius: var(--r-sm);">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #F9A8D4, #DB2777); display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--white);">엄</div>
+                <div style="flex: 1;">
+                  <div style="font-size: 13px; font-weight: 700;">엄마</div>
+                  <div style="font-size: 11px; color: var(--neutral-500);">카카오톡 · 절친 등록 ⭐⭐⭐</div>
+                </div>
+                <span style="background: var(--red); color: var(--white); padding: 3px 8px; border-radius: var(--r-full); font-size: 10px; font-weight: 700;">강압박 · 3000P</span>
+                <a href="#" style="font-size: 11px; color: var(--neutral-500); text-decoration: none;">⋮</a>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: var(--neutral-50); border-radius: var(--r-sm);">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #FED7AA, var(--orange)); display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--white);">최</div>
+                <div style="flex: 1;">
+                  <div style="font-size: 13px; font-weight: 700;">최선규 (친구)</div>
+                  <div style="font-size: 11px; color: var(--neutral-500);">인스타그램 · 친구 등록 ⭐⭐</div>
+                </div>
+                <span style="background: var(--orange); color: var(--white); padding: 3px 8px; border-radius: var(--r-full); font-size: 10px; font-weight: 700;">중압박 · 2000P</span>
+                <a href="#" style="font-size: 11px; color: var(--neutral-500); text-decoration: none;">⋮</a>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: var(--neutral-50); border-radius: var(--r-sm);">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #BFDBFE, #3B82F6); display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--white);">스</div>
+                <div style="flex: 1;">
+                  <div style="font-size: 13px; font-weight: 700;">스터디그룹 (15명)</div>
+                  <div style="font-size: 11px; color: var(--neutral-500);">디스코드 · 단체 ⭐</div>
+                </div>
+                <span style="background: #FBBF24; color: var(--white); padding: 3px 8px; border-radius: var(--r-full); font-size: 10px; font-weight: 700;">약압박 · 1000P</span>
+                <a href="#" style="font-size: 11px; color: var(--neutral-500); text-decoration: none;">⋮</a>
+              </div>
+            </div>
+
+            <a href="#" style="display: block; text-align: center; margin-top: 12px; padding: 10px; border: 1.5px dashed var(--neutral-300); border-radius: var(--r-sm); font-size: 13px; color: var(--orange); font-weight: 600; text-decoration: none;">+ 지인 추가하기</a>
+          </div>
+        </div>
+
+        <!-- 우측 사이드바 -->
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <!-- 압박 강도 게이지 -->
+          <div class="card elevated" style="background: linear-gradient(180deg, #FEE2E2 0%, #FFF7ED 100%); border-color: var(--red); border-width: 1.5px;">
+            <div class="card-title" style="color: var(--red);"><span class="icon">🔥</span> 현재 압박 강도</div>
+            <div style="text-align: center; padding: 12px 0;">
+              <div style="font-size: 44px; font-weight: 700; color: var(--red); font-family: 'Hanken Grotesk', sans-serif; line-height: 1;">STRONG</div>
+              <div style="font-size: 12px; color: var(--neutral-700); margin-top: 6px;">SNS 2개 · 지인 3명 등록</div>
+            </div>
+            <!-- 압박도 막대 -->
+            <div style="height: 8px; background: linear-gradient(90deg, #FBBF24, var(--orange), var(--red)); border-radius: 999px; position: relative; margin: 12px 0;">
+              <div style="position: absolute; top: -3px; left: 78%; width: 14px; height: 14px; background: var(--white); border: 2px solid var(--red); border-radius: 50%;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 10px; color: var(--neutral-500); font-family: 'JetBrains Mono', monospace;">
+              <span>약</span><span>중</span><span>강</span><span>극강</span>
+            </div>
+            <div style="margin-top: 12px; padding: 10px; background: var(--white); border-radius: var(--r-sm); font-size: 11px; color: var(--neutral-700); line-height: 1.5;">
+              💡 압박 강도가 높을수록 학습 동기 효과는 강하지만, 자신을 잘 알고 설정하세요.
+            </div>
+          </div>
+
+          <!-- 효과 통계 -->
+          <div class="card elevated">
+            <div class="card-title"><span class="icon">📊</span> SNS 압박 효과</div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="padding: 10px; background: var(--neutral-50); border-radius: var(--r-sm);">
+                <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 4px;">SNS 연동 사용자 평균</div>
+                <div style="font-size: 20px; font-weight: 700; color: var(--green); font-family: 'Hanken Grotesk', sans-serif;">+47%</div>
+                <div style="font-size: 11px; color: var(--neutral-500);">목표 달성률 증가</div>
+              </div>
+              <div style="padding: 10px; background: var(--neutral-50); border-radius: var(--r-sm);">
+                <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 4px;">패널티 발동 횟수</div>
+                <div style="font-size: 20px; font-weight: 700; color: var(--red); font-family: 'Hanken Grotesk', sans-serif;">-62%</div>
+                <div style="font-size: 11px; color: var(--neutral-500);">미연동 대비 감소</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 개인정보 안내 -->
+          <div class="card elevated">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+              <span style="width: 36px; height: 36px; border-radius: var(--r-sm); background: var(--info-soft); display: inline-flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">🛡️</span>
+              <div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--navy);">개인정보 보호</div>
+                <div style="font-size: 10px; color: var(--neutral-500); margin-top: 2px;">학습도우미가 약속하는 4가지</div>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; align-items: flex-start; gap: 8px; padding: 8px 10px; background: #F0FDF4; border-radius: var(--r-sm); border-left: 2px solid var(--green);">
+                <span style="color: var(--green); font-weight: 700; font-size: 12px; flex-shrink: 0; line-height: 1.5;">✓</span>
+                <span style="font-size: 11px; color: var(--neutral-700); font-weight: 500; line-height: 1.5;">비밀번호는 저장하지 않습니다</span>
+              </div>
+              <div style="display: flex; align-items: flex-start; gap: 8px; padding: 8px 10px; background: #F0FDF4; border-radius: var(--r-sm); border-left: 2px solid var(--green);">
+                <span style="color: var(--green); font-weight: 700; font-size: 12px; flex-shrink: 0; line-height: 1.5;">✓</span>
+                <span style="font-size: 11px; color: var(--neutral-700); font-weight: 500; line-height: 1.5;">OAuth 2.0 기반 안전 인증</span>
+              </div>
+              <div style="display: flex; align-items: flex-start; gap: 8px; padding: 8px 10px; background: #F0FDF4; border-radius: var(--r-sm); border-left: 2px solid var(--green);">
+                <span style="color: var(--green); font-weight: 700; font-size: 12px; flex-shrink: 0; line-height: 1.5;">✓</span>
+                <span style="font-size: 11px; color: var(--neutral-700); font-weight: 500; line-height: 1.5;">언제든 연결 해제 가능</span>
+              </div>
+              <div style="display: flex; align-items: flex-start; gap: 8px; padding: 8px 10px; background: #F0FDF4; border-radius: var(--r-sm); border-left: 2px solid var(--green);">
+                <span style="color: var(--green); font-weight: 700; font-size: 12px; flex-shrink: 0; line-height: 1.5;">✓</span>
+                <span style="font-size: 11px; color: var(--neutral-700); font-weight: 500; line-height: 1.5;">지인 정보는 본인만 열람</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="screen-id">P-CM-SN-00 · /community/sns</div>
+</div>
+</body>
+</html>

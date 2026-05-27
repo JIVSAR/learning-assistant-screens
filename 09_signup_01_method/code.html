@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>회원가입 - 가입 방법 선택 — 학습도우미</title><link rel="stylesheet" href="../assets/style.css">
+<style>
+  @page { size: 1280px 900px; margin: 0; }
+  body { width: 100%; max-width: 1280px; margin: 0 auto; }
+  .page { width: 100%; max-width: 1280px; min-height: 900px; position: relative; background: var(--neutral-50); }
+  .signup-shell { display: flex; align-items: center; justify-content: center; min-height: 800px; padding: 40px; }
+  .signup-card { background: var(--white); border-radius: var(--r-lg); padding: 56px 56px; max-width: 480px; width: 100%; border: 1px solid var(--neutral-200); }
+  .stepper { display: flex; gap: 8px; align-items: center; margin-bottom: 24px; }
+  .step-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--neutral-200); }
+  .step-dot.active { background: var(--orange); }
+  .step-line { flex: 1; height: 2px; background: var(--neutral-200); }
+  .step-line.done { background: var(--orange); }
+  .social-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; height: 48px; border-radius: var(--r-md); font-weight: 600; font-size: 14px; border: 1px solid var(--neutral-200); margin-bottom: 10px; background: var(--white); color: var(--neutral-900); }
+  .social-btn.kakao { background: #FEE500; }
+  .social-btn.naver { background: #03C75A; color: var(--white); }
+</style></head>
+<body>
+<div class="page">
+  <!-- Mini header -->
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid var(--neutral-200); background: var(--white);">
+    <a href="#" style="text-decoration: none; display: flex; align-items: center; gap: 8px; color: var(--neutral-500); font-size: 14px;">
+      <span>←</span><span>메인으로</span>
+    </a>
+    <div style="font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; color: var(--navy);">📘 학습도우미</div>
+    <a href="#" style="text-decoration: none; color: var(--neutral-400); font-size: 18px;">✕</a>
+  </div>
+
+  <div class="signup-shell">
+    <div class="signup-card">
+      <!-- Stepper -->
+      <div class="stepper">
+        <div class="step-dot active"></div>
+        <div class="step-line"></div>
+        <div class="step-dot"></div>
+        <div class="step-line"></div>
+        <div class="step-dot"></div>
+        <div class="step-line"></div>
+        <div class="step-dot"></div>
+        <div class="step-line"></div>
+        <div class="step-dot"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--neutral-500); margin-bottom: 32px; font-family: 'JetBrains Mono', monospace;">
+        <span style="color: var(--orange); font-weight: 700;">METHOD</span><span>EMAIL</span><span>TERMS</span><span>VERIFY</span><span>PROFILE</span>
+      </div>
+
+      <h1 style="font-size: 28px; font-weight: 700; color: var(--neutral-900); margin-bottom: 8px;">학습도우미와 함께 시작하기</h1>
+      <p style="font-size: 14px; color: var(--neutral-500); margin-bottom: 32px;">가입에는 30초도 걸리지 않습니다 ⏱</p>
+
+      <!-- Primary -->
+      <a href="#" style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; height: 52px; border-radius: var(--r-md); background: var(--orange); color: var(--white); font-weight: 700; font-size: 15px; text-decoration: none; margin-bottom: 24px;">
+        ✉️ 이메일로 가입하기 →
+      </a>
+
+      <!-- Divider -->
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+        <div style="flex: 1; height: 1px; background: var(--neutral-200);"></div>
+        <span style="font-size: 11px; color: var(--neutral-400); letter-spacing: 0.1em;">OR</span>
+        <div style="flex: 1; height: 1px; background: var(--neutral-200);"></div>
+      </div>
+
+      <!-- Social -->
+      <a href="#" class="social-btn kakao">💬 카카오로 시작하기</a>
+      <a href="#" class="social-btn naver">N 네이버로 시작하기</a>
+
+      <div style="text-align: center; margin-top: 32px; font-size: 13px; color: var(--neutral-500);">
+        이미 계정이 있으신가요?
+        <a href="#" style="color: var(--orange); font-weight: 700; text-decoration: none;">로그인 →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen-id">P-AU-SU-01 · /auth/signup</div>
+</div>
+</body></html>
