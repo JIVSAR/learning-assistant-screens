@@ -155,7 +155,7 @@ html, body {
 .sidebar-nav a .icon { font-size: 16px; width: 18px; text-align: center; }
 .sidebar-divider { height: 1px; background: var(--neutral-200); margin: 16px 0; }
 .sidebar-cta {
-  margin-top: auto;
+  margin-top: 24px;
   display: block;
   background: var(--orange);
   color: var(--white);

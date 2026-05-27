@@ -8,8 +8,13 @@
     @page { size: 1280px 920px; margin: 0; }
     body { width: 100%; max-width: 1280px; margin: 0 auto; }
     .page { width: 100%; max-width: 1280px; min-height: 920px; position: relative; }
+
+    /* 07_ai 전용: 3컬럼 flex 레이아웃 (사이드바 | 대화 기록 | 채팅 메인) */
+    .shell { display: flex; }
+    .sidebar { display: block; }
+
     .chat-history {
-      width: 260px; background: var(--neutral-50); border-right: 1px solid var(--neutral-200); padding: 20px 16px;
+      width: 260px; flex-shrink: 0; background: var(--neutral-50); border-right: 1px solid var(--neutral-200); padding: 20px 16px;
     }
     .chat-history h3 { font-size: 12px; font-weight: 700; color: var(--neutral-500); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; font-family: 'Hanken Grotesk', sans-serif; }
     .chat-item { padding: 10px 12px; border-radius: var(--r-md); margin-bottom: 6px; font-size: 13px; color: var(--neutral-700); }
