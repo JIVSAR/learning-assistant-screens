@@ -50,6 +50,8 @@ html, body {
   line-height: 1.5;
   color: var(--neutral-700);
   background: var(--neutral-50);
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* ─── Typography ─── */
