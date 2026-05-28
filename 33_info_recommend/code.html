@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>강의 추천 — 학습도우미</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    @page { size: 1280px 1400px; margin: 0; }
+    body { width: 100%; max-width: 1280px; margin: 0 auto; }
+    .page { width: 100%; max-width: 1280px; min-height: 1400px; position: relative; }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div class="topbar-logo"><span class="dot">📘</span><span>학습도우미</span></div>
+    <nav class="topbar-nav">
+      <a href="../01b_main_logged_in/code.html">홈</a>
+      <a href="../02_dashboard/code.html">학습</a>
+      <a href="../05_community/code.html">커뮤니티</a>
+      <a href="../08_store/code.html">상점</a>
+      <a href="#" class="active">정보</a>
+      <a href="#">고객센터</a>
+    </nav>
+    <div class="topbar-search">🔍 검색</div>
+    <div class="topbar-right">
+      <span class="icon-btn">🔔</span>
+      <span class="user-chip"><span class="avatar">도</span>도전</span>
+    </div>
+  </div>
+
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="sidebar-user">
+        <span class="avatar">도</span>
+        <div class="info">
+          <div class="name">도전</div>
+          <div class="meta">마스터 학습자 · Lv. 12</div>
+        </div>
+      </div>
+      <div class="label-mono" style="color: var(--neutral-500); margin-bottom: 8px; padding: 0 4px;">📰 정보</div>
+      <nav class="sidebar-nav">
+        <a href="../35_info_notice/code.html"><span class="icon">📢</span>공지사항</a>
+        <a href="../32_info_trend/code.html"><span class="icon">📊</span>학습 트렌드</a>
+        <a href="#" class="active"><span class="icon">🎓</span>강의 추천</a>
+        <a href="../34_search_results/code.html"><span class="icon">🔍</span>검색 결과</a>
+      </nav>
+      <div class="sidebar-cta" style="background: var(--neutral-50); color: var(--neutral-700); border: 1px solid var(--neutral-200); padding: 14px; text-align: left;">
+        <div style="font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px;">🎯 학습 목표 설정</div>
+        <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 10px; line-height: 1.4;">AI 추천 정확도 높이려면 학습 목표 설정</div>
+        <a href="../02_dashboard/code.html" class="btn btn-primary btn-sm" style="width: 100%;">목표 설정 →</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <!-- A. Page Header -->
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;">
+        <div>
+          <h1 class="h1">강의 추천</h1>
+          <p class="body" style="color: var(--neutral-500); margin-top: 6px;">당신의 학습 패턴을 AI가 분석한 맞춤 강의</p>
+        </div>
+        <a href="#" class="btn btn-secondary btn-sm">🤖 AI 추천순 ▾</a>
+      </div>
+      <!-- B. AI Hero 추천 카드 -->
+      <div class="card elevated" style="padding: 24px; margin-bottom: 16px; border-left: 4px solid var(--orange); position: relative;">
+        <span class="label-mono" style="position: absolute; top: 16px; right: 20px; font-size: 10px; color: var(--neutral-400);">💡 광고 (제휴)</span>
+
+        <div style="display: flex; gap: 8px; margin-bottom: 10px; align-items: center;">
+          <span style="font-size: 11px; font-weight: 700; color: var(--orange); background: var(--orange-soft); padding: 4px 10px; border-radius: var(--r-full);">🤖 AI 1순위 추천</span>
+          <span style="font-size: 11px; font-weight: 700; color: var(--white); background: var(--green); padding: 3px 10px; border-radius: var(--r-full);">인프런</span>
+          <span style="font-size: 11px; color: var(--info); background: var(--info-soft); padding: 3px 10px; border-radius: var(--r-full); font-weight: 600;">중급</span>
+        </div>
+
+        <h2 style="font-family: 'Hanken Grotesk', 'Pretendard', sans-serif; font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.3;">정보처리기사 실기 - 30일 단기 완성 (2026 최신판)</h2>
+        <div style="font-size: 13px; color: var(--neutral-500); margin-bottom: 12px;">이수진 강사 · 총 42시간 · 학습 자료 PDF 제공</div>
+
+        <div style="background: var(--orange-soft); padding: 12px 16px; border-radius: var(--r-md); margin-bottom: 16px; border-left: 3px solid var(--orange);">
+          <div style="font-size: 11px; font-weight: 700; color: var(--orange); margin-bottom: 4px;">🤖 AI 추천 이유</div>
+          <div style="font-size: 13px; line-height: 1.6; color: var(--neutral-700);">최근 정처기 실기 학습이 87% 증가했고, 회원님의 데이터베이스·SQL 학습 패턴(5개월 누적)과 일치합니다. 시험까지 D-23일 — 30일 완성 강의가 적합합니다.</div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-top: 1px solid var(--neutral-200); margin-bottom: 16px;">
+          <div style="display: flex; gap: 16px; font-size: 12px; flex-wrap: wrap;">
+            <span style="color: var(--amber); font-weight: 600;">★ 4.9 (1,847개 리뷰)</span>
+            <span style="color: var(--neutral-500);">👥 8,234명 수강 중</span>
+            <span style="color: var(--orange); font-weight: 700;">🏆 베스트셀러</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: flex-end;">
+            <span style="font-size: 12px; color: var(--neutral-400); text-decoration: line-through; font-family: 'JetBrains Mono', monospace;">₩99,000</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 700; color: var(--orange); line-height: 1;">₩49,500 <span style="font-size: 13px;">(50%)</span></span>
+            <span style="font-size: 11px; color: var(--neutral-500); margin-top: 2px;">쿠폰 <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--orange);">STUDY50</span></span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 8px;">
+          <a href="#" class="btn btn-primary" style="flex: 1; height: 48px; font-size: 15px; font-weight: 700;">🎓 인프런에서 강의 보기 →</a>
+          <a href="#" class="btn btn-secondary" style="width: 80px; height: 48px;">🔖 찜</a>
+        </div>
+      </div>
+      <!-- C. 필터 영역 -->
+      <div class="card" style="padding: 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 12px;">
+
+        <!-- 행 1: 카테고리 -->
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span style="font-size: 11px; font-weight: 700; color: var(--neutral-700); min-width: 60px;">카테고리</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 700; background: var(--navy); color: var(--white); cursor: pointer;">전체</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; background: var(--neutral-100); color: var(--neutral-700); cursor: pointer;">💻 IT 개발</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; background: var(--neutral-100); color: var(--neutral-700); cursor: pointer;">📜 자격증</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; background: var(--neutral-100); color: var(--neutral-700); cursor: pointer;">🎯 수험</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; background: var(--neutral-100); color: var(--neutral-700); cursor: pointer;">🌐 언어</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; background: var(--neutral-100); color: var(--neutral-700); cursor: pointer;">💼 취업</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; background: var(--neutral-100); color: var(--neutral-700); cursor: pointer;">🎨 디자인</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; background: var(--neutral-100); color: var(--neutral-700); cursor: pointer;">📈 비즈니스</span>
+        </div>
+
+        <!-- 행 2: 난이도 -->
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span style="font-size: 11px; font-weight: 700; color: var(--neutral-700); min-width: 60px;">난이도</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 700; background: var(--navy); color: var(--white); cursor: pointer;">전체</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; background: var(--neutral-100); color: var(--neutral-700); cursor: pointer;">초급</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; background: var(--neutral-100); color: var(--neutral-700); cursor: pointer;">중급</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; background: var(--neutral-100); color: var(--neutral-700); cursor: pointer;">고급</span>
+        </div>
+
+        <!-- 행 3: 가격 -->
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span style="font-size: 11px; font-weight: 700; color: var(--neutral-700); min-width: 60px;">가격</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 700; background: var(--navy); color: var(--white); cursor: pointer;">전체</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; background: var(--neutral-100); color: var(--neutral-700); cursor: pointer;">무료</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; background: var(--neutral-100); color: var(--neutral-700); cursor: pointer;">할인 중</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; background: var(--neutral-100); color: var(--neutral-700); cursor: pointer;">1만원 이하</span>
+        </div>
+
+        <!-- 행 4: 플랫폼 -->
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span style="font-size: 11px; font-weight: 700; color: var(--neutral-700); min-width: 60px;">플랫폼</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 700; background: var(--navy); color: var(--white); cursor: pointer;">전체</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 700; background: rgba(16,185,129,0.15); color: var(--green); cursor: pointer;">인프런</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 700; background: rgba(140,77,255,0.15); color: rgba(140,77,255,1); cursor: pointer;">유데미</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 700; background: rgba(59,130,246,0.15); color: var(--info); cursor: pointer;">코세라</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 700; background: rgba(239,68,68,0.15); color: var(--red); cursor: pointer;">패스트캠퍼스</span>
+          <span style="padding: 6px 12px; border-radius: var(--r-full); font-size: 12px; font-weight: 700; background: rgba(245,158,11,0.15); color: var(--amber); cursor: pointer;">클래스101</span>
+        </div>
+      </div>
+      <!-- D. 강의 카드 그리드 (3×3) -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px;">
+        <h2 style="font-family: 'Hanken Grotesk', 'Pretendard', sans-serif; font-size: 20px; font-weight: 700; color: var(--navy); margin: 0;">🤖 AI 맞춤 강의 (9개)</h2>
+        <span style="font-size: 11px; color: var(--neutral-400);">회원님 학습 패턴 기반</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+
+        <!-- 1. 인프런 / SQLD -->
+        <div class="card" style="padding: 16px; cursor: pointer; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="padding: 3px 10px; border-radius: var(--r-full); font-size: 10px; font-weight: 700; background: rgba(16,185,129,0.15); color: var(--green);">인프런</span>
+            <span style="font-size: 10px; color: var(--orange); font-weight: 700;">🏆 베스트</span>
+          </div>
+          <div style="display: flex; gap: 4px; margin-bottom: 8px; font-size: 10px;">
+            <span style="color: var(--neutral-500); background: var(--neutral-100); padding: 2px 6px; border-radius: var(--r-sm);">💻 IT</span>
+            <span style="color: var(--info); background: var(--info-soft); padding: 2px 6px; border-radius: var(--r-sm);">중급</span>
+          </div>
+          <div style="font-weight: 700; font-size: 14px; color: var(--navy); line-height: 1.4; margin-bottom: 6px; min-height: 38px;">SQLD 30일 단기 합격 완성반</div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 8px;">김영호</div>
+          <div style="display: flex; gap: 10px; font-size: 11px; color: var(--neutral-500); margin-bottom: 10px; flex-wrap: wrap;">
+            <span style="color: var(--amber);">★ 4.8</span>
+            <span>5,234명</span>
+            <span>25h</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--neutral-200);">
+            <div>
+              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--orange); font-size: 15px;">₩22,500</span>
+              <span style="font-size: 10px; color: var(--neutral-400); text-decoration: line-through; font-family: 'JetBrains Mono', monospace; margin-left: 4px;">₩45,000</span>
+            </div>
+            <span style="color: var(--orange); font-weight: 700; font-size: 14px;">→</span>
+          </div>
+        </div>
+
+        <!-- 2. 유데미 / React -->
+        <div class="card" style="padding: 16px; cursor: pointer; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="padding: 3px 10px; border-radius: var(--r-full); font-size: 10px; font-weight: 700; background: rgba(140,77,255,0.15); color: rgba(140,77,255,1);">유데미</span>
+            <span style="font-size: 10px; color: var(--red); font-weight: 700;">-56%</span>
+          </div>
+          <div style="display: flex; gap: 4px; margin-bottom: 8px; font-size: 10px;">
+            <span style="color: var(--neutral-500); background: var(--neutral-100); padding: 2px 6px; border-radius: var(--r-sm);">💻 IT</span>
+            <span style="color: var(--green); background: var(--green-soft); padding: 2px 6px; border-radius: var(--r-sm);">초급</span>
+          </div>
+          <div style="font-weight: 700; font-size: 14px; color: var(--navy); line-height: 1.4; margin-bottom: 6px; min-height: 38px;">[2026] React 입문부터 실전까지 완전정복</div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 8px;">Maximilian</div>
+          <div style="display: flex; gap: 10px; font-size: 11px; color: var(--neutral-500); margin-bottom: 10px; flex-wrap: wrap;">
+            <span style="color: var(--amber);">★ 4.7</span>
+            <span>12,456명</span>
+            <span>38h</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--neutral-200);">
+            <div>
+              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--orange); font-size: 15px;">₩39,000</span>
+              <span style="font-size: 10px; color: var(--neutral-400); text-decoration: line-through; font-family: 'JetBrains Mono', monospace; margin-left: 4px;">₩89,000</span>
+            </div>
+            <span style="color: var(--orange); font-weight: 700; font-size: 14px;">→</span>
+          </div>
+        </div>
+
+        <!-- 3. 코세라 / Toefl -->
+        <div class="card" style="padding: 16px; cursor: pointer; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="padding: 3px 10px; border-radius: var(--r-full); font-size: 10px; font-weight: 700; background: rgba(59,130,246,0.15); color: var(--info);">코세라</span>
+            <span style="font-size: 10px; color: var(--info); font-weight: 700;">🆕 신규</span>
+          </div>
+          <div style="display: flex; gap: 4px; margin-bottom: 8px; font-size: 10px;">
+            <span style="color: var(--neutral-500); background: var(--neutral-100); padding: 2px 6px; border-radius: var(--r-sm);">🌐 언어</span>
+            <span style="color: var(--info); background: var(--info-soft); padding: 2px 6px; border-radius: var(--r-sm);">중급</span>
+          </div>
+          <div style="font-weight: 700; font-size: 14px; color: var(--navy); line-height: 1.4; margin-bottom: 6px; min-height: 38px;">Toefl Speaking Masterclass</div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 8px;">Stanford University</div>
+          <div style="display: flex; gap: 10px; font-size: 11px; color: var(--neutral-500); margin-bottom: 10px; flex-wrap: wrap;">
+            <span style="color: var(--amber);">★ 4.9</span>
+            <span>2,134명</span>
+            <span>30h</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--neutral-200);">
+            <div>
+              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--orange); font-size: 15px;">₩89,000</span>
+              <span style="font-size: 10px; color: var(--neutral-400); text-decoration: line-through; font-family: 'JetBrains Mono', monospace; margin-left: 4px;">₩129,000</span>
+            </div>
+            <span style="color: var(--orange); font-weight: 700; font-size: 14px;">→</span>
+          </div>
+        </div>
+
+        <!-- 4. 패스트캠퍼스 / 포트폴리오 -->
+        <div class="card" style="padding: 16px; cursor: pointer; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="padding: 3px 10px; border-radius: var(--r-full); font-size: 10px; font-weight: 700; background: rgba(239,68,68,0.15); color: var(--red);">패스트캠퍼스</span>
+            <span style="font-size: 10px; color: var(--red); font-weight: 700;">-55%</span>
+          </div>
+          <div style="display: flex; gap: 4px; margin-bottom: 8px; font-size: 10px;">
+            <span style="color: var(--neutral-500); background: var(--neutral-100); padding: 2px 6px; border-radius: var(--r-sm);">💼 취업</span>
+            <span style="color: var(--green); background: var(--green-soft); padding: 2px 6px; border-radius: var(--r-sm);">초급</span>
+          </div>
+          <div style="font-weight: 700; font-size: 14px; color: var(--navy); line-height: 1.4; margin-bottom: 6px; min-height: 38px;">개발자 포트폴리오 완성 부트캠프</div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 8px;">박지영</div>
+          <div style="display: flex; gap: 10px; font-size: 11px; color: var(--neutral-500); margin-bottom: 10px; flex-wrap: wrap;">
+            <span style="color: var(--amber);">★ 4.6</span>
+            <span>3,247명</span>
+            <span>45h</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--neutral-200);">
+            <div>
+              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--orange); font-size: 15px;">₩99,000</span>
+              <span style="font-size: 10px; color: var(--neutral-400); text-decoration: line-through; font-family: 'JetBrains Mono', monospace; margin-left: 4px;">₩220,000</span>
+            </div>
+            <span style="color: var(--orange); font-weight: 700; font-size: 14px;">→</span>
+          </div>
+        </div>
+
+        <!-- 5. 인프런 / Spring Boot -->
+        <div class="card" style="padding: 16px; cursor: pointer; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="padding: 3px 10px; border-radius: var(--r-full); font-size: 10px; font-weight: 700; background: rgba(16,185,129,0.15); color: var(--green);">인프런</span>
+            <span style="font-size: 10px; color: var(--orange); font-weight: 700;">🔥 인기</span>
+          </div>
+          <div style="display: flex; gap: 4px; margin-bottom: 8px; font-size: 10px;">
+            <span style="color: var(--neutral-500); background: var(--neutral-100); padding: 2px 6px; border-radius: var(--r-sm);">💻 IT</span>
+            <span style="color: var(--red); background: var(--red-soft); padding: 2px 6px; border-radius: var(--r-sm);">고급</span>
+          </div>
+          <div style="font-weight: 700; font-size: 14px; color: var(--navy); line-height: 1.4; margin-bottom: 6px; min-height: 38px;">Spring Boot 마이크로서비스 실전</div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 8px;">김영한</div>
+          <div style="display: flex; gap: 10px; font-size: 11px; color: var(--neutral-500); margin-bottom: 10px; flex-wrap: wrap;">
+            <span style="color: var(--amber);">★ 4.9</span>
+            <span>8,891명</span>
+            <span>52h</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--neutral-200);">
+            <div>
+              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--orange); font-size: 15px;">₩69,300</span>
+              <span style="font-size: 10px; color: var(--neutral-400); text-decoration: line-through; font-family: 'JetBrains Mono', monospace; margin-left: 4px;">₩99,000</span>
+            </div>
+            <span style="color: var(--orange); font-weight: 700; font-size: 14px;">→</span>
+          </div>
+        </div>
+
+        <!-- 6. 클래스101 / 피그마 -->
+        <div class="card" style="padding: 16px; cursor: pointer; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="padding: 3px 10px; border-radius: var(--r-full); font-size: 10px; font-weight: 700; background: rgba(245,158,11,0.15); color: var(--amber);">클래스101</span>
+            <span style="font-size: 10px; color: var(--red); font-weight: 700;">-50%</span>
+          </div>
+          <div style="display: flex; gap: 4px; margin-bottom: 8px; font-size: 10px;">
+            <span style="color: var(--neutral-500); background: var(--neutral-100); padding: 2px 6px; border-radius: var(--r-sm);">🎨 디자인</span>
+            <span style="color: var(--green); background: var(--green-soft); padding: 2px 6px; border-radius: var(--r-sm);">초급</span>
+          </div>
+          <div style="font-weight: 700; font-size: 14px; color: var(--navy); line-height: 1.4; margin-bottom: 6px; min-height: 38px;">피그마 UI/UX 디자인 입문 (생초보용)</div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 8px;">김아영</div>
+          <div style="display: flex; gap: 10px; font-size: 11px; color: var(--neutral-500); margin-bottom: 10px; flex-wrap: wrap;">
+            <span style="color: var(--amber);">★ 4.5</span>
+            <span>1,892명</span>
+            <span>18h</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--neutral-200);">
+            <div>
+              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--orange); font-size: 15px;">₩34,500</span>
+              <span style="font-size: 10px; color: var(--neutral-400); text-decoration: line-through; font-family: 'JetBrains Mono', monospace; margin-left: 4px;">₩69,000</span>
+            </div>
+            <span style="color: var(--orange); font-weight: 700; font-size: 14px;">→</span>
+          </div>
+        </div>
+
+        <!-- 7. 유데미 / 데이터 분석 -->
+        <div class="card" style="padding: 16px; cursor: pointer; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="padding: 3px 10px; border-radius: var(--r-full); font-size: 10px; font-weight: 700; background: rgba(140,77,255,0.15); color: rgba(140,77,255,1);">유데미</span>
+            <span style="font-size: 10px; color: var(--red); font-weight: 700;">-50%</span>
+          </div>
+          <div style="display: flex; gap: 4px; margin-bottom: 8px; font-size: 10px;">
+            <span style="color: var(--neutral-500); background: var(--neutral-100); padding: 2px 6px; border-radius: var(--r-sm);">📈 비즈니스</span>
+            <span style="color: var(--info); background: var(--info-soft); padding: 2px 6px; border-radius: var(--r-sm);">중급</span>
+          </div>
+          <div style="font-weight: 700; font-size: 14px; color: var(--navy); line-height: 1.4; margin-bottom: 6px; min-height: 38px;">데이터 분석으로 비즈니스 인사이트 도출</div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 8px;">Krish Naik</div>
+          <div style="display: flex; gap: 10px; font-size: 11px; color: var(--neutral-500); margin-bottom: 10px; flex-wrap: wrap;">
+            <span style="color: var(--amber);">★ 4.6</span>
+            <span>6,234명</span>
+            <span>22h</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--neutral-200);">
+            <div>
+              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--orange); font-size: 15px;">₩27,500</span>
+              <span style="font-size: 10px; color: var(--neutral-400); text-decoration: line-through; font-family: 'JetBrains Mono', monospace; margin-left: 4px;">₩55,000</span>
+            </div>
+            <span style="color: var(--orange); font-weight: 700; font-size: 14px;">→</span>
+          </div>
+        </div>
+
+        <!-- 8. 인프런 / 정처기 필기 -->
+        <div class="card" style="padding: 16px; cursor: pointer; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="padding: 3px 10px; border-radius: var(--r-full); font-size: 10px; font-weight: 700; background: rgba(16,185,129,0.15); color: var(--green);">인프런</span>
+            <span style="font-size: 10px; color: var(--red); font-weight: 700;">-50%</span>
+          </div>
+          <div style="display: flex; gap: 4px; margin-bottom: 8px; font-size: 10px;">
+            <span style="color: var(--neutral-500); background: var(--neutral-100); padding: 2px 6px; border-radius: var(--r-sm);">📜 자격증</span>
+            <span style="color: var(--info); background: var(--info-soft); padding: 2px 6px; border-radius: var(--r-sm);">중급</span>
+          </div>
+          <div style="font-weight: 700; font-size: 14px; color: var(--navy); line-height: 1.4; margin-bottom: 6px; min-height: 38px;">정보처리기사 필기 - 한 권으로 끝내기</div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 8px;">이수진</div>
+          <div style="display: flex; gap: 10px; font-size: 11px; color: var(--neutral-500); margin-bottom: 10px; flex-wrap: wrap;">
+            <span style="color: var(--amber);">★ 4.8</span>
+            <span>9,847명</span>
+            <span>35h</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--neutral-200);">
+            <div>
+              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--orange); font-size: 15px;">₩39,500</span>
+              <span style="font-size: 10px; color: var(--neutral-400); text-decoration: line-through; font-family: 'JetBrains Mono', monospace; margin-left: 4px;">₩79,000</span>
+            </div>
+            <span style="color: var(--orange); font-weight: 700; font-size: 14px;">→</span>
+          </div>
+        </div>
+
+        <!-- 9. 코세라 / ML -->
+        <div class="card" style="padding: 16px; cursor: pointer; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="padding: 3px 10px; border-radius: var(--r-full); font-size: 10px; font-weight: 700; background: rgba(59,130,246,0.15); color: var(--info);">코세라</span>
+            <span style="font-size: 10px; color: var(--orange); font-weight: 700;">🏆 베스트</span>
+          </div>
+          <div style="display: flex; gap: 4px; margin-bottom: 8px; font-size: 10px;">
+            <span style="color: var(--neutral-500); background: var(--neutral-100); padding: 2px 6px; border-radius: var(--r-sm);">🎯 수험</span>
+            <span style="color: var(--red); background: var(--red-soft); padding: 2px 6px; border-radius: var(--r-sm);">고급</span>
+          </div>
+          <div style="font-weight: 700; font-size: 14px; color: var(--navy); line-height: 1.4; margin-bottom: 6px; min-height: 38px;">Machine Learning Specialization</div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-bottom: 8px;">Andrew Ng</div>
+          <div style="display: flex; gap: 10px; font-size: 11px; color: var(--neutral-500); margin-bottom: 10px; flex-wrap: wrap;">
+            <span style="color: var(--amber);">★ 4.9</span>
+            <span>18,234명</span>
+            <span>60h</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--neutral-200);">
+            <div>
+              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--orange); font-size: 15px;">₩119,000</span>
+              <span style="font-size: 10px; color: var(--neutral-400); text-decoration: line-through; font-family: 'JetBrains Mono', monospace; margin-left: 4px;">₩159,000</span>
+            </div>
+            <span style="color: var(--orange); font-weight: 700; font-size: 14px;">→</span>
+          </div>
+        </div>
+      </div>
+      <!-- E. 광고 배너 (제휴 교재) -->
+      <div style="position: relative; padding: 16px; margin-bottom: 16px; border: 1px dashed var(--neutral-300); border-radius: var(--r-md); background: linear-gradient(135deg, var(--info-soft) 0%, var(--white) 100%); display: flex; gap: 16px; align-items: center;">
+        <span class="label-mono" style="position: absolute; top: 8px; right: 12px; font-size: 10px; color: var(--neutral-400);">💡 광고</span>
+        <div style="width: 64px; height: 64px; background: var(--white); border-radius: var(--r-md); font-size: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">📚</div>
+        <div style="flex: 1;">
+          <div style="font-size: 11px; color: var(--info); font-weight: 600; margin-bottom: 4px;">제휴 교재</div>
+          <div style="font-weight: 700; font-size: 16px; color: var(--navy); margin-bottom: 4px;">한빛미디어 - IT 자격증 신간 100선 30% 할인</div>
+          <div style="font-size: 12px; color: var(--neutral-500);">쿠폰 코드: <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--info);">BOOK30</span> · 5월 31일까지</div>
+        </div>
+        <a href="#" class="btn btn-secondary btn-sm">쿠폰 받기 →</a>
+      </div>
+
+      <!-- F. AI 추천 정확도 카드 -->
+      <div class="card elevated" style="padding: 16px; display: flex; gap: 16px; align-items: center;">
+        <div style="flex: 1;">
+          <div style="font-weight: 700; color: var(--navy); font-size: 14px;">🎯 AI 추천 정확도 높이기</div>
+          <div style="font-size: 12px; color: var(--neutral-500); margin-top: 4px;">학습 목표·과목·시간대를 설정하면 AI가 더 정확한 강의를 추천합니다.</div>
+          <div style="margin-top: 8px;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--neutral-500); margin-bottom: 4px;">
+              <span>AI 추천 정확도</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--orange);">72%</span>
+            </div>
+            <div style="height: 6px; background: var(--neutral-200); border-radius: var(--r-full); overflow: hidden;">
+              <div style="width: 72%; height: 100%; background: var(--orange);"></div>
+            </div>
+          </div>
+        </div>
+        <a href="../02_dashboard/code.html" class="btn btn-primary btn-sm">🎯 학습 목표 설정 →</a>
+      </div>
+    </main>
+  </div>
+  <div class="screen-id">P-FE-IN-10 · /info/recommend</div>
+</div>
+</body>
+</html>

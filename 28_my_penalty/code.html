@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>패널티 위험도 — 학습도우미</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    @page { size: 1280px 1200px; margin: 0; }
+    body { width: 100%; max-width: 1280px; margin: 0 auto; }
+    .page { width: 100%; max-width: 1280px; min-height: 1200px; position: relative; }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div class="topbar-logo"><span class="dot">📘</span><span>학습도우미</span></div>
+    <nav class="topbar-nav">
+      <a href="../01b_main_logged_in/code.html">홈</a>
+      <a href="../02_dashboard/code.html">학습</a>
+      <a href="../05_community/code.html">커뮤니티</a>
+      <a href="../08_store/code.html">상점</a>
+      <a href="#">정보</a>
+      <a href="#">고객센터</a>
+    </nav>
+    <div class="topbar-search">🔍 검색</div>
+    <div class="topbar-right">
+      <span class="icon-btn">🔔</span>
+      <span class="user-chip"><span class="avatar">도</span>도전</span>
+    </div>
+  </div>
+
+  <div class="shell">
+    <main class="main">
+      <!-- Page Header -->
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+        <div>
+          <h1 class="h1">패널티 위험도</h1>
+          <p class="body" style="color: var(--neutral-500); margin-top: 6px;">현재 위험 상태와 과거 패널티 기록을 확인합니다.</p>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <a href="../04_mypage/code.html" class="btn btn-secondary btn-sm">← 마이 페이지</a>
+          <a href="../27_my_vault/code.html" class="btn btn-secondary btn-sm">🔒 봉인소 보기</a>
+        </div>
+      </div>
+
+      <!-- Hero 위험도 카드 -->
+      <div class="card elevated" style="padding: 32px; margin-bottom: 16px; border: 2px solid var(--amber); background: linear-gradient(135deg, var(--red-soft) 0%, var(--white) 60%);">
+        <div style="display: grid; grid-template-columns: 55fr 45fr; gap: 32px; align-items: center;">
+
+          <!-- 좌측: SVG 도넛 게이지 -->
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <svg width="220" height="220" viewBox="0 0 200 200" style="display: block;">
+              <circle cx="100" cy="100" r="80" stroke="var(--neutral-200)" stroke-width="16" fill="none"/>
+              <circle cx="100" cy="100" r="80" stroke="var(--amber)" stroke-width="16" fill="none"
+                      stroke-dasharray="377 502" stroke-linecap="round"
+                      transform="rotate(-90 100 100)"/>
+              <text x="100" y="105" text-anchor="middle"
+                    style="font-family: 'Hanken Grotesk', sans-serif; font-size: 56px; font-weight: 700; fill: var(--amber);">75%</text>
+              <text x="100" y="138" text-anchor="middle"
+                    style="font-family: 'Pretendard', sans-serif; font-size: 18px; font-weight: 600; fill: var(--amber);">주의</text>
+            </svg>
+          </div>
+
+          <!-- 우측: 카운트다운 + 위험 메시지 + CTA -->
+          <div>
+            <div class="label-mono" style="margin-bottom: 6px;">다음 검증까지</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 36px; font-weight: 700; color: var(--red); letter-spacing: 0.05em; line-height: 1;">09 : 34 : 22</div>
+            <div class="label-mono" style="font-size: 10px; color: var(--neutral-400); margin-top: 4px;">HH : MM : SS</div>
+
+            <div style="background: var(--red-soft); padding: 14px 16px; border-left: 3px solid var(--red); border-radius: var(--r-sm); margin: 16px 0; font-size: 13px; color: var(--red); line-height: 1.5;">
+              ⚠ 현재 학습 페이스 유지 시 봉인된 사진 1개가 24시간 후 인스타그램에 자동 공개될 예정입니다.
+            </div>
+
+            <div style="display: flex; gap: 8px; align-items: stretch;">
+              <a href="../03_session/code.html" class="btn btn-danger" style="flex: 1; height: 44px;">지금 학습 시작 →</a>
+              <a href="#" class="btn btn-secondary btn-sm" style="height: 44px;">공개 일시 차단 (2/2)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 하단: 위험 4단계 막대 -->
+        <div style="margin-top: 24px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+            <span class="label-mono" style="font-size: 10px;">안전 0~30%</span>
+            <span class="label-mono" style="font-size: 10px;">주의 30~70%</span>
+            <span class="label-mono" style="font-size: 10px;">위험 70~90%</span>
+            <span class="label-mono" style="font-size: 10px;">임박 90%+</span>
+          </div>
+          <div style="display: flex; gap: 0; height: 8px; border-radius: var(--r-full); overflow: hidden;">
+            <div style="flex: 30; background: var(--green);"></div>
+            <div style="flex: 40; background: var(--amber);"></div>
+            <div style="flex: 20; background: var(--red);"></div>
+            <div style="flex: 10; background: var(--navy-deep);"></div>
+          </div>
+          <div style="margin-top: 4px; position: relative;">
+            <span style="font-size: 12px; color: var(--amber); font-weight: 700; padding-left: calc(75% - 50px);">▲ 현재 75% — 주의</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 활성 위험 트리거 섹션 -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; margin-top: 24px;">
+        <h2 class="h2" style="margin: 0;">활성 위험 트리거</h2>
+        <span style="font-size: 12px; color: var(--neutral-500);">위험을 끌어올리는 학습 목표 (실시간 갱신)</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin-bottom: 24px;">
+        <!-- 카드 1: 주간 학습 목표 -->
+        <div class="card" style="padding: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 12px; font-weight: 600; color: var(--neutral-700);">📚 주간 학습 목표</span>
+            <span style="background: var(--red); color: var(--white); padding: 2px 8px; border-radius: var(--r-full); font-size: 10px; font-weight: 700;">+30%</span>
+          </div>
+          <div style="font-size: 22px; font-weight: 700; color: var(--navy); font-family: 'Hanken Grotesk', sans-serif; margin: 10px 0 4px;">15.5h / 20h</div>
+          <div style="height: 6px; background: var(--red-soft); border-radius: var(--r-full); overflow: hidden;">
+            <div style="width: 77%; height: 100%; background: var(--red);"></div>
+          </div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-top: 8px;">남은 4.5h · 봉인 영향: 📷 사진 1개</div>
+          <a href="../03_session/code.html" style="color: var(--orange); font-size: 11px; font-weight: 600; margin-top: 6px; display: block; text-decoration: none;">학습 시작 →</a>
+        </div>
+
+        <!-- 카드 2: 연속 출석 (안전) -->
+        <div class="card" style="padding: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 12px; font-weight: 600; color: var(--neutral-700);">📅 연속 출석</span>
+            <span style="background: var(--green-soft); color: var(--green); padding: 2px 8px; border-radius: var(--r-full); font-size: 10px; font-weight: 700;">✓</span>
+          </div>
+          <div style="font-size: 22px; font-weight: 700; color: var(--green); font-family: 'Hanken Grotesk', sans-serif; margin: 10px 0 4px;">14일</div>
+          <div style="height: 6px; background: var(--green-soft); border-radius: var(--r-full); overflow: hidden;">
+            <div style="width: 100%; height: 100%; background: var(--green);"></div>
+          </div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-top: 8px;">이번 주 안전 · 28일 연속 도전 중</div>
+          <div style="height: 17px; margin-top: 6px;"></div>
+        </div>
+
+        <!-- 카드 3: 시험 D-7 누적 -->
+        <div class="card" style="padding: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 12px; font-weight: 600; color: var(--neutral-700);">🎯 시험 D-7 누적</span>
+            <span style="background: var(--red); color: var(--white); padding: 2px 8px; border-radius: var(--r-full); font-size: 10px; font-weight: 700;">+25%</span>
+          </div>
+          <div style="font-size: 22px; font-weight: 700; color: var(--navy); font-family: 'Hanken Grotesk', sans-serif; margin: 10px 0 4px;">18h / 30h</div>
+          <div style="height: 6px; background: var(--neutral-200); border-radius: var(--r-full); overflow: hidden;">
+            <div style="width: 60%; height: 100%; background: var(--amber);"></div>
+          </div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-top: 8px;">남은 12h · 봉인 영향: 📝 텍스트 1개</div>
+          <a href="../03_session/code.html" style="color: var(--orange); font-size: 11px; font-weight: 600; margin-top: 6px; display: block; text-decoration: none;">학습 시작 →</a>
+        </div>
+
+        <!-- 카드 4: 월 누적 학습 -->
+        <div class="card" style="padding: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 12px; font-weight: 600; color: var(--neutral-700);">📈 월 누적 학습</span>
+            <span style="background: var(--amber); color: var(--white); padding: 2px 8px; border-radius: var(--r-full); font-size: 10px; font-weight: 700;">+20%</span>
+          </div>
+          <div style="font-size: 22px; font-weight: 700; color: var(--navy); font-family: 'Hanken Grotesk', sans-serif; margin: 10px 0 4px;">62h / 80h</div>
+          <div style="height: 6px; background: var(--neutral-200); border-radius: var(--r-full); overflow: hidden;">
+            <div style="width: 78%; height: 100%; background: var(--amber);"></div>
+          </div>
+          <div style="font-size: 11px; color: var(--neutral-500); margin-top: 8px;">남은 18h · 봉인 영향: 🎤 음성 1개</div>
+          <a href="../03_session/code.html" style="color: var(--orange); font-size: 11px; font-weight: 600; margin-top: 6px; display: block; text-decoration: none;">학습 시작 →</a>
+        </div>
+      </div>
+
+      <!-- 과거 패널티 기록 -->
+      <div class="card elevated" style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+          <h2 class="h2" style="margin: 0;">🕒 과거 패널티 기록</h2>
+          <span style="font-size: 11px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace;">지난 3개월</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+          <!-- 기록 1 -->
+          <div style="display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--neutral-200);">
+            <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--red); flex-shrink: 0; margin-top: 6px;"></div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 14px; font-weight: 700; color: var(--navy-light);">주간 목표 미달성 (-3.5h)</span>
+                <span style="font-size: 11px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace;">2026-05-20 21:30</span>
+              </div>
+              <div style="font-size: 12px; color: var(--neutral-500); margin-top: 4px;">📝 흑역사 반성문 → 📱 인스타그램</div>
+              <div style="font-size: 11px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace; margin-top: 2px;">자동 삭제 · 2026-05-21 21:30</div>
+            </div>
+            <span class="badge" style="background: var(--neutral-400); color: var(--white); flex-shrink: 0;">🌐 공개됨</span>
+          </div>
+
+          <!-- 기록 2 -->
+          <div style="display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--neutral-200);">
+            <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--orange); flex-shrink: 0; margin-top: 6px;"></div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 14px; font-weight: 700; color: var(--navy-light);">월 누적 미달성 (-15h)</span>
+                <span style="font-size: 11px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace;">2026-04-12 23:59</span>
+              </div>
+              <div style="font-size: 12px; color: var(--neutral-500); margin-top: 4px;">📷 졸업사진 → 👨‍👩‍👧 부모님 카톡</div>
+              <div style="font-size: 11px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace; margin-top: 2px;">자동 삭제 · 2026-04-13 23:59</div>
+            </div>
+            <span class="badge" style="background: var(--neutral-400); color: var(--white); flex-shrink: 0;">🌐 공개됨</span>
+          </div>
+
+          <!-- 기록 3 -->
+          <div style="display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--neutral-200);">
+            <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--amber); flex-shrink: 0; margin-top: 6px;"></div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 14px; font-weight: 700; color: var(--navy-light);">시험 D-day 누적 부족</span>
+                <span style="font-size: 11px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace;">2026-03-28 12:00</span>
+              </div>
+              <div style="font-size: 12px; color: var(--neutral-500); margin-top: 4px;">📝 일기 → 📘 페이스북</div>
+              <div style="font-size: 11px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace; margin-top: 2px;">자동 삭제 · 2026-03-29 12:00</div>
+            </div>
+            <span class="badge" style="background: var(--neutral-400); color: var(--white); flex-shrink: 0;">🌐 공개됨</span>
+          </div>
+
+          <!-- 기록 4 -->
+          <div style="display: flex; gap: 14px; align-items: flex-start; padding: 12px 0;">
+            <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--info); flex-shrink: 0; margin-top: 6px;"></div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 14px; font-weight: 700; color: var(--navy-light);">연속 출석 끊김 (14일 → 0일)</span>
+                <span style="font-size: 11px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace;">2026-02-15 18:45</span>
+              </div>
+              <div style="font-size: 12px; color: var(--neutral-500); margin-top: 4px;">🎬 영상 → 💬 카톡</div>
+              <div style="font-size: 11px; color: var(--neutral-400); font-family: 'JetBrains Mono', monospace; margin-top: 2px;">자동 삭제 · 2026-02-16 18:45</div>
+            </div>
+            <span class="badge" style="background: var(--neutral-400); color: var(--white); flex-shrink: 0;">🌐 공개됨</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 위험 완화 가이드 -->
+      <div class="card" style="background: var(--green-soft-2); border-color: var(--green);">
+        <div class="card-title" style="color: var(--navy);"><span class="icon">💡</span> 위험을 낮추는 방법</div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--neutral-700);">
+            <span style="color: var(--green); font-weight: 700; flex-shrink: 0;">✓</span>
+            <span>매일 30분 이상 학습 → 연속 출석 유지 <span style="color: var(--green); font-weight: 600;">(위험 -10%)</span></span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--neutral-700);">
+            <span style="color: var(--green); font-weight: 700; flex-shrink: 0;">✓</span>
+            <span>주간 목표 5시간 초과 달성 → 다음 주 위험도 자동 <span style="color: var(--green); font-weight: 600;">-20%</span></span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--neutral-700);">
+            <span style="color: var(--green); font-weight: 700; flex-shrink: 0;">✓</span>
+            <span>봉인 공개 대상 사전 조정 → <a href="../27_my_vault/code.html" style="color: var(--orange); text-decoration: none; font-weight: 600;">봉인소</a>에서 변경 가능</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="screen-id">P-FE-MY-10 · /my/penalty</div>
+</div>
+</body>
+</html>

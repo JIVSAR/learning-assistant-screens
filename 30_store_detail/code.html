@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>봉인 1회 차단권 — 학습도우미 상점</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    @page { size: 1280px 1100px; margin: 0; }
+    body { width: 100%; max-width: 1280px; margin: 0 auto; }
+    .page { width: 100%; max-width: 1280px; min-height: 1100px; position: relative; }
+    .ph-card {
+      aspect-ratio: 1 / 1;
+      background: var(--neutral-200);
+      border-radius: var(--r-md);
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- BACKGROUND: 08_store placeholder -->
+  <div class="topbar">
+    <div class="topbar-logo"><span class="dot">📘</span><span>학습도우미</span></div>
+    <nav class="topbar-nav">
+      <a href="../01b_main_logged_in/code.html">홈</a>
+      <a href="../02_dashboard/code.html">학습</a>
+      <a href="../05_community/code.html">커뮤니티</a>
+      <a href="../08_store/code.html" class="active">상점</a>
+      <a href="#">정보</a>
+      <a href="#">고객센터</a>
+    </nav>
+    <div class="topbar-search">🔍 검색</div>
+    <div class="topbar-right">
+      <span class="icon-btn">🔔</span>
+      <span class="user-chip"><span class="avatar">도</span>도전</span>
+    </div>
+  </div>
+
+  <div class="shell">
+    <main class="main" style="padding-top: 24px;">
+      <h1 class="h1">🛒 상점</h1>
+      <p class="body" style="color: var(--neutral-500); margin-bottom: 24px;">학습으로 모은 포인트를 가치 있게 사용하세요. 매주 신규 아이템이 추가됩니다.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+        <div class="ph-card"></div>
+        <div class="ph-card"></div>
+        <div class="ph-card"></div>
+        <div class="ph-card"></div>
+        <div class="ph-card"></div>
+        <div class="ph-card"></div>
+        <div class="ph-card"></div>
+        <div class="ph-card"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- DIM OVERLAY -->
+  <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.55); z-index: 100; backdrop-filter: blur(2px);"></div>
+
+  <!-- MODAL: 상품 상세 -->
+  <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 101; background: var(--white); border-radius: var(--r-lg); box-shadow: var(--shadow-lg); overflow: hidden; max-width: 920px; width: 90%; max-height: 90vh; display: flex; flex-direction: column;">
+
+    <!-- 모달 헤더 -->
+    <div style="height: 60px; border-bottom: 1px solid var(--neutral-200); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+      <span class="badge badge-info">학습 강화 아이템</span>
+      <div style="width: 32px; height: 32px; background: var(--neutral-100); border-radius: var(--r-full); display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--neutral-700); cursor: pointer;">✕</div>
+    </div>
+
+    <!-- 모달 본문 -->
+    <div style="display: grid; grid-template-columns: 320px 1fr; gap: 28px; padding: 24px;">
+
+      <!-- 좌측: 일러스트 + 썸네일 -->
+      <div>
+        <div style="background: linear-gradient(135deg, var(--orange-soft) 0%, var(--white) 100%); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; font-size: 140px; color: var(--orange); line-height: 1; width: 320px; height: 320px;">🛡</div>
+        <div style="margin-top: 12px; display: flex; gap: 6px;">
+          <div style="width: 72px; height: 72px; border-radius: var(--r-sm); background: var(--orange-soft); border: 2px solid var(--orange); display: flex; align-items: center; justify-content: center; font-size: 28px;">🛡</div>
+          <div style="width: 72px; height: 72px; border-radius: var(--r-sm); background: var(--neutral-100); display: flex; align-items: center; justify-content: center; font-size: 28px; opacity: 0.5;">⚔</div>
+          <div style="width: 72px; height: 72px; border-radius: var(--r-sm); background: var(--neutral-100); display: flex; align-items: center; justify-content: center; font-size: 28px; opacity: 0.5;">🌟</div>
+          <div style="width: 72px; height: 72px; border-radius: var(--r-sm); background: var(--neutral-100); display: flex; align-items: center; justify-content: center; font-size: 28px; opacity: 0.5;">📖</div>
+        </div>
+      </div>
+
+      <!-- 우측: 상품 정보 -->
+      <div style="min-width: 0;">
+        <div style="display: flex; gap: 6px; margin-bottom: 12px;">
+          <span class="badge badge-info">학습 강화</span>
+          <span class="badge" style="background: var(--orange-soft); color: var(--orange);">🔥 인기</span>
+        </div>
+
+        <h1 style="font-family: 'Hanken Grotesk', 'Pretendard', sans-serif; font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.2;">봉인 1회 차단권</h1>
+
+        <div style="display: flex; gap: 12px; font-size: 12px; color: var(--neutral-500); margin-bottom: 12px; flex-wrap: wrap;">
+          <span>🛒 누적 구매 1,247회</span>
+          <span>📦 이번 달 보유자 342명 (전체 27%)</span>
+        </div>
+
+        <p style="font-size: 13.5px; line-height: 1.6; color: var(--neutral-700); margin-bottom: 12px;">
+          패널티 위험도가 100%에 도달하더라도 봉인 콘텐츠 공개를 1회 자동 차단합니다. 다음 검증 시점은 24시간 후로 연기됩니다.
+        </p>
+
+        <div style="background: var(--neutral-50); padding: 10px 12px; border-radius: var(--r-sm); margin-bottom: 10px; display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; gap: 8px; align-items: center; font-size: 12px; color: var(--neutral-700);">
+            <span style="color: var(--green); font-weight: 700; flex-shrink: 0;">✓</span>
+            <span>위험도 100% 도달 시 자동 발동</span>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center; font-size: 12px; color: var(--neutral-700);">
+            <span style="color: var(--green); font-weight: 700; flex-shrink: 0;">✓</span>
+            <span>다음 검증 24시간 연기</span>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center; font-size: 12px; color: var(--neutral-700);">
+            <span style="color: var(--green); font-weight: 700; flex-shrink: 0;">✓</span>
+            <span>월 한도 2개 보유 가능</span>
+          </div>
+        </div>
+
+        <div style="background: var(--info-soft); padding: 10px 12px; border-radius: var(--r-sm); font-size: 12px; color: var(--navy); margin-bottom: 10px;">
+          💡 봉인소가 비어있으면 효과 없음
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-top: 1px dashed var(--neutral-200); border-bottom: 1px dashed var(--neutral-200);">
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 700; color: var(--orange); line-height: 1;">200 P</div>
+            <div style="font-size: 11px; color: var(--neutral-500); margin-top: 4px;">보유 320 P</div>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <button style="width: 28px; height: 28px; border: 1px solid var(--neutral-200); border-radius: var(--r-sm); background: var(--white); font-weight: 700; color: var(--neutral-500); cursor: pointer;">−</button>
+            <span style="font-size: 15px; font-weight: 700; min-width: 24px; text-align: center; font-family: 'JetBrains Mono', monospace;">1</span>
+            <button style="width: 28px; height: 28px; border: 1px solid var(--neutral-200); border-radius: var(--r-sm); background: var(--white); font-weight: 700; color: var(--neutral-700); cursor: pointer;">+</button>
+          </div>
+        </div>
+
+        <div style="font-size: 11px; color: var(--neutral-500); margin: 8px 0 0;">월 한도 2/2 보유 가능</div>
+      </div>
+    </div>
+
+    <!-- 모달 푸터 -->
+    <div style="padding: 16px 24px; border-top: 1px solid var(--neutral-200); display: flex; gap: 8px; flex-shrink: 0; background: var(--white);">
+      <a href="#" class="btn btn-secondary" style="flex: 0 0 100px; height: 44px;">🛒 찜</a>
+      <a href="../31_store_checkout/code.html" class="btn btn-primary" style="flex: 1; height: 44px; font-size: 15px; font-weight: 700;">200 P 구매하기 →</a>
+    </div>
+  </div>
+
+  <div class="screen-id">P-FE-SH-05 · /store/blocker-001 (모달)</div>
+</div>
+</body>
+</html>
