@@ -5,7 +5,7 @@
   body { width: 100%; max-width: 1280px; margin: 0 auto; }
   .page { width: 100%; max-width: 1280px; min-height: 1000px; position: relative; background: var(--neutral-50); }
   .signup-shell { display: flex; align-items: center; justify-content: center; min-height: 900px; padding: 40px; }
-  .signup-card { background: var(--white); border-radius: var(--r-lg); padding: 48px 56px; max-width: 540px; width: 100%; border: 1px solid var(--neutral-200); }
+  .signup-card { background: var(--white); border-radius: var(--r-lg); padding: 48px 56px; max-width: 540px; width: 100%; border: 1px solid var(--neutral-200); position: relative; }
   .stepper { display: flex; gap: 8px; align-items: center; margin-bottom: 24px; }
   .step-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--neutral-200); }
   .step-dot.active { background: var(--orange); }
@@ -23,17 +23,17 @@
   .term-label .required { color: var(--red); font-weight: 700; font-size: 11px; margin-right: 4px; }
   .term-label .optional { color: var(--neutral-400); font-weight: 600; font-size: 11px; margin-right: 4px; }
   .view-link { font-size: 11px; color: var(--neutral-500); text-decoration: none; flex-shrink: 0; }
+  @media screen {
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    .signup-shell { flex: 1; min-height: 0; padding: 24px; }
+    .signup-card { padding: 56px 56px 32px 40px; }
+  }
 </style></head>
 <body>
 <div class="page">
-  <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid var(--neutral-200); background: var(--white);">
-    <a href="../10_signup_02_email/code.html" style="text-decoration: none; display: flex; align-items: center; gap: 8px; color: var(--neutral-500); font-size: 14px;"><span>←</span><span>뒤로</span></a>
-    <div style="font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; color: var(--navy); display: inline-flex; align-items: center; gap: 6px;"><span style="display: inline-block; width: 24px; height: 24px; background: url('../assets/logo.svg') no-repeat center / contain;"></span>학습도우미 · 회원가입 (3/5)</div>
-    <a href="../01_main/code.html" style="text-decoration: none; color: var(--neutral-400); font-size: 18px;">✕</a>
-  </div>
-
   <div class="signup-shell">
     <div class="signup-card">
+      <a href="../01_main/code.html" style="position:absolute; top:18px; right:20px; text-decoration:none; color:var(--neutral-400); font-size:20px; line-height:1;">✕</a>
       <div class="stepper">
         <div class="step-dot done"></div><div class="step-line done"></div>
         <div class="step-dot done"></div><div class="step-line done"></div>
@@ -84,13 +84,9 @@
         💡 흑역사 시스템은 가입 후에도 마이페이지에서 언제든 켜고 끌 수 있어요.
       </div>
 
-      <div style="display: flex; gap: 12px; margin-top: 24px;">
-        <a href="../01_main/code.html" style="flex: 0 0 140px; display: flex; align-items: center; justify-content: center; height: 52px; border-radius: var(--r-md); background: var(--white); color: var(--neutral-700); border: 1.5px solid var(--neutral-300); font-weight: 600; font-size: 13px; text-decoration: none;">
-          가입 중단
-        </a>
-        <a href="../12_signup_04_verify/code.html" style="flex: 1; display: flex; align-items: center; justify-content: center; height: 52px; border-radius: var(--r-md); background: var(--orange); color: var(--white); font-weight: 700; font-size: 15px; text-decoration: none;">
-          동의하고 다음 단계 →
-        </a>
+      <div style="display:flex; gap:12px; margin-top: 24px;">
+        <a href="../10_signup_02_email/code.html" style="flex:0 0 120px; display:flex; align-items:center; justify-content:center; height:52px; border-radius:var(--r-md); background:var(--white); color:var(--neutral-700); border:1.5px solid var(--neutral-300); font-weight:600; font-size:14px; text-decoration:none;">← 이전</a>
+        <a href="../12_signup_04_verify/code.html" style="flex:1; display:flex; align-items:center; justify-content:center; height:52px; border-radius:var(--r-md); background:var(--orange); color:var(--white); font-weight:700; font-size:15px; text-decoration:none;">다음 단계로 →</a>
       </div>
 
     </div>
