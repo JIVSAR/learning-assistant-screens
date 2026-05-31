@@ -404,4 +404,11 @@ html, body {
 
 /* ─── Screen ID Watermark (bottom-right) ─── */
 .screen-id {
-  position: absolu
+  position: absolute;
+  bottom: 16px;
+  right: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--neutral-400);
+  letter-spacing: 0.03em;
+}
