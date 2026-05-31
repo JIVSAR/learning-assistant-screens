@@ -5,7 +5,7 @@
   body { width: 100%; max-width: 1280px; margin: 0 auto; }
   .page { width: 100%; max-width: 1280px; min-height: 900px; position: relative; background: var(--neutral-50); }
   .signup-shell { display: flex; align-items: center; justify-content: center; min-height: 800px; padding: 40px; }
-  .signup-card { background: var(--white); border-radius: var(--r-lg); padding: 56px; max-width: 480px; width: 100%; border: 1px solid var(--neutral-200); text-align: center; }
+  .signup-card { background: var(--white); border-radius: var(--r-lg); padding: 56px; max-width: 480px; width: 100%; border: 1px solid var(--neutral-200); text-align: center; position: relative; }
   .stepper { display: flex; gap: 8px; align-items: center; margin-bottom: 24px; }
   .step-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--neutral-200); }
   .step-dot.active { background: var(--orange); }
@@ -22,14 +22,9 @@
 </style></head>
 <body>
 <div class="page">
-  <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid var(--neutral-200); background: var(--white);">
-    <a href="../11_signup_03_terms/code.html" style="text-decoration: none; color: var(--neutral-500); font-size: 14px;">← 뒤로</a>
-    <div style="font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; color: var(--navy); display: inline-flex; align-items: center; gap: 6px;"><span style="display: inline-block; width: 24px; height: 24px; background: url('../assets/logo.svg') no-repeat center / contain;"></span>학습도우미 · 회원가입 (4/5)</div>
-    <a href="../01_main/code.html" style="text-decoration: none; color: var(--neutral-400); font-size: 18px;">✕</a>
-  </div>
-
   <div class="signup-shell">
     <div class="signup-card">
+      <a href="../01_main/code.html" style="position:absolute; top:18px; right:20px; text-decoration:none; color:var(--neutral-400); font-size:20px; line-height:1;">✕</a>
       <div class="stepper">
         <div class="step-dot done"></div><div class="step-line done"></div>
         <div class="step-dot done"></div><div class="step-line done"></div>
@@ -62,9 +57,10 @@
         메일이 안 왔나요? <a href="#" style="color: var(--orange); font-weight: 600; text-decoration: none;">코드 재전송 →</a>
       </div>
 
-      <a href="../13_signup_05_profile/code.html" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 52px; border-radius: var(--r-md); background: var(--orange); color: var(--white); font-weight: 700; font-size: 15px; text-decoration: none;">
-        인증 확인 →
-      </a>
+      <div style="display:flex; gap:12px;">
+        <a href="../11_signup_03_terms/code.html" style="flex:0 0 120px; display:flex; align-items:center; justify-content:center; height:52px; border-radius:var(--r-md); background:var(--white); color:var(--neutral-700); border:1.5px solid var(--neutral-300); font-weight:600; font-size:14px; text-decoration:none;">← 이전</a>
+        <a href="../13_signup_05_profile/code.html" style="flex:1; display:flex; align-items:center; justify-content:center; height:52px; border-radius:var(--r-md); background:var(--orange); color:var(--white); font-weight:700; font-size:15px; text-decoration:none;">다음 단계로 →</a>
+      </div>
 
     </div>
   </div>

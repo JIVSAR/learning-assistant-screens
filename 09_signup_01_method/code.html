@@ -5,7 +5,7 @@
   body { width: 100%; max-width: 1280px; margin: 0 auto; }
   .page { width: 100%; max-width: 1280px; min-height: 900px; position: relative; background: var(--neutral-50); }
   .signup-shell { display: flex; align-items: center; justify-content: center; min-height: 800px; padding: 40px; }
-  .signup-card { background: var(--white); border-radius: var(--r-lg); padding: 56px 56px; max-width: 480px; width: 100%; border: 1px solid var(--neutral-200); }
+  .signup-card { background: var(--white); border-radius: var(--r-lg); padding: 56px 56px; max-width: 480px; width: 100%; border: 1px solid var(--neutral-200); position: relative; }
   .stepper { display: flex; gap: 8px; align-items: center; margin-bottom: 24px; }
   .step-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--neutral-200); }
   .step-dot.active { background: var(--orange); }
@@ -21,17 +21,9 @@
 </style></head>
 <body>
 <div class="page">
-  <!-- Mini header -->
-  <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid var(--neutral-200); background: var(--white);">
-    <a href="../01_main/code.html" style="text-decoration: none; display: flex; align-items: center; gap: 8px; color: var(--neutral-500); font-size: 14px;">
-      <span>←</span><span>메인으로</span>
-    </a>
-    <div style="font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; color: var(--navy); display: inline-flex; align-items: center; gap: 6px;"><span style="display: inline-block; width: 24px; height: 24px; background: url('../assets/logo.svg') no-repeat center / contain;"></span>학습도우미 · 회원가입 (1/5)</div>
-    <a href="../01_main/code.html" style="text-decoration: none; color: var(--neutral-400); font-size: 18px;">✕</a>
-  </div>
-
   <div class="signup-shell">
     <div class="signup-card">
+      <a href="../01_main/code.html" style="position:absolute; top:18px; right:20px; text-decoration:none; color:var(--neutral-400); font-size:20px; line-height:1;">✕</a>
       <!-- Stepper -->
       <div class="stepper">
         <div class="step-dot active"></div>
