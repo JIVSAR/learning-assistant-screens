@@ -19,6 +19,11 @@
   .radio-btn.selected { border-color: var(--orange); color: var(--orange); font-weight: 700; background: var(--orange-soft); }
   .avatar-pick { width: 56px; height: 56px; border-radius: 50%; background: var(--neutral-100); display: flex; align-items: center; justify-content: center; font-size: 28px; cursor: pointer; }
   .avatar-pick.selected { background: var(--orange); border: 3px solid var(--orange); box-shadow: 0 0 0 3px var(--orange-soft); }
+  @media screen {
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    .signup-shell { flex: 1; min-height: 0; padding: 24px; }
+    .signup-card { padding: 32px 40px; }
+  }
 </style></head>
 <body>
 <div class="page">

@@ -23,6 +23,11 @@
   .term-label .required { color: var(--red); font-weight: 700; font-size: 11px; margin-right: 4px; }
   .term-label .optional { color: var(--neutral-400); font-weight: 600; font-size: 11px; margin-right: 4px; }
   .view-link { font-size: 11px; color: var(--neutral-500); text-decoration: none; flex-shrink: 0; }
+  @media screen {
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    .signup-shell { flex: 1; min-height: 0; padding: 24px; }
+    .signup-card { padding: 32px 40px; }
+  }
 </style></head>
 <body>
 <div class="page">

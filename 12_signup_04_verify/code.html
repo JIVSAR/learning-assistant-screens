@@ -15,6 +15,10 @@
   .code-input { display: flex; gap: 8px; justify-content: center; margin: 32px 0; }
   .code-box { width: 56px; height: 64px; border: 2px solid var(--neutral-200); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; font-family: 'Hanken Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: var(--navy); }
   .code-box.filled { border-color: var(--orange); background: var(--orange-soft); }
+  @media screen {
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    .signup-shell { flex: 1; min-height: 0; padding: 24px; }
+  }
 </style></head>
 <body>
 <div class="page">
