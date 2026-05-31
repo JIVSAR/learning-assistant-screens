@@ -20,6 +20,12 @@
     .podium-card.bronze .rank-num { color: #CD7F32; }
     .rank-row { display: flex; gap: 14px; padding: 12px 16px; background: var(--white); border: 1px solid var(--neutral-200); border-radius: var(--r-md); align-items: center; transition: background 0.15s; }
     .rank-row.me { background: var(--orange-soft); border-color: var(--orange); border-left: 4px solid var(--orange); }
+    /* 기간 필터 탭 */
+    .hof-tab { padding: 12px 16px; color: var(--neutral-500); font-size: 14px; font-weight: 500; cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; }
+    .hof-tab.active { color: var(--navy); font-weight: 700; border-bottom-color: var(--orange); }
+    /* 분야별 챔피언 카드 */
+    .champ-card { transition: transform 0.15s, box-shadow 0.15s; }
+    .champ-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
   </style>
 </head>
 <body>
@@ -67,18 +73,20 @@
       <p class="body" style="color: var(--neutral-500); margin-bottom: 16px;">가장 오래 학습한 학습자에게 영예의 자리를. TOP 10에 들면 한정 뱃지가 지급됩니다.</p>
 
       <!-- 기간 필터 탭 -->
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--neutral-200); margin-bottom: 24px;">
+      <div id="hofTabs" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--neutral-200); margin-bottom: 24px;">
         <div style="display: flex; gap: 4px;">
-          <div style="padding: 12px 16px; border-bottom: 3px solid var(--orange); margin-bottom: -2px; color: var(--navy); font-weight: 700; font-size: 14px; cursor: pointer;">주간 🔥</div>
-          <div style="padding: 12px 16px; color: var(--neutral-500); font-size: 14px; font-weight: 500; cursor: pointer;">월간</div>
-          <div style="padding: 12px 16px; color: var(--neutral-500); font-size: 14px; font-weight: 500; cursor: pointer;">전체 누적</div>
-          <div style="padding: 12px 16px; color: var(--neutral-500); font-size: 14px; font-weight: 500; cursor: pointer;">분야별 챔피언</div>
+          <div class="hof-tab active" onclick="hofView('ranking', this)">주간 🔥</div>
+          <div class="hof-tab" onclick="hofView('ranking', this)">월간</div>
+          <div class="hof-tab" onclick="hofView('ranking', this)">전체 누적</div>
+          <div class="hof-tab" id="tabCategory" onclick="hofView('category', this)">분야별 챔피언</div>
         </div>
         <div style="font-size: 11px; color: var(--neutral-500); font-family: 'JetBrains Mono', monospace; padding-bottom: 8px;">
           이번 주 마감까지 <span style="color: var(--orange); font-weight: 700;">2일 14시간 38분</span>
         </div>
       </div>
 
+      <!-- ===== 랭킹 뷰 (주간 / 월간 / 전체 누적) ===== -->
+      <div id="rankingView">
       <!-- TOP 3 시상대 -->
       <div class="podium">
         <!-- 2위 -->
@@ -298,7 +306,107 @@
                 <div style="font-size: 11px; color: var(--orange); font-weight: 700; font-family: 'JetBrains Mono', monospace;">85h</div>
               </div>
             </div>
-            <a href="#" style="display: block; text-align: center; margin-top: 12px; font-size: 12px; color: var(--orange); font-weight: 600; text-decoration: none;">전체 분야 보기 →</a>
+            <a href="#" onclick="hofView('category', document.getElementById('tabCategory')); document.getElementById('hofTabs').scrollIntoView({behavior: 'smooth', block: 'start'}); return false;" style="display: block; text-align: center; margin-top: 12px; font-size: 12px; color: var(--orange); font-weight: 600; text-decoration: none;">전체 분야 보기 →</a>
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- ===== /랭킹 뷰 ===== -->
+
+      <!-- ===== 분야별 뷰 (분야별 챔피언 탭) ===== -->
+      <div id="categoryView" style="display: none;">
+        <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 16px;">
+          <h3 style="font-size: 18px; font-weight: 700; color: var(--navy); margin: 0;">⚔️ 분야별 전체 챔피언</h3>
+          <span style="font-size: 13px; color: var(--neutral-500); font-weight: 600;">· 8개 학습 분야별 누적 시간 1위</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+          <!-- 알고리즘 -->
+          <div class="card elevated champ-card" style="text-align: center;">
+            <span style="width: 48px; height: 48px; border-radius: var(--r-md); background: var(--orange-soft); display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 8px;">💻</span>
+            <div style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px;">알고리즘</div>
+            <div style="padding-top: 12px; border-top: 1px solid var(--neutral-200);">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #FFD700 0%, #F59E0B 100%); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 22px;">🐰</div>
+              <div style="font-size: 13px; font-weight: 700; color: var(--navy);">알고고수 <span style="font-size: 11px;">🥇</span></div>
+              <div style="font-size: 11px; color: var(--neutral-500); margin: 2px 0 8px;">컴퓨터공학과</div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--orange);">122h</div>
+            </div>
+          </div>
+          <!-- 데이터베이스 -->
+          <div class="card elevated champ-card" style="text-align: center;">
+            <span style="width: 48px; height: 48px; border-radius: var(--r-md); background: var(--orange-soft); display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 8px;">📊</span>
+            <div style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px;">데이터베이스</div>
+            <div style="padding-top: 12px; border-top: 1px solid var(--neutral-200);">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #FFD700 0%, #F59E0B 100%); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 22px;">🦁</div>
+              <div style="font-size: 13px; font-weight: 700; color: var(--navy);">DB지존 <span style="font-size: 11px;">🥇</span></div>
+              <div style="font-size: 11px; color: var(--neutral-500); margin: 2px 0 8px;">정보보호학과</div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--orange);">98h</div>
+            </div>
+          </div>
+          <!-- 어학 -->
+          <div class="card elevated champ-card" style="text-align: center;">
+            <span style="width: 48px; height: 48px; border-radius: var(--r-md); background: var(--orange-soft); display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 8px;">🌐</span>
+            <div style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px;">어학</div>
+            <div style="padding-top: 12px; border-top: 1px solid var(--neutral-200);">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #FFD700 0%, #F59E0B 100%); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 22px;">🦉</div>
+              <div style="font-size: 13px; font-weight: 700; color: var(--navy);">토익만점 <span style="font-size: 11px;">🥇</span></div>
+              <div style="font-size: 11px; color: var(--neutral-500); margin: 2px 0 8px;">영어영문학과</div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--orange);">85h</div>
+            </div>
+          </div>
+          <!-- 운영체제 -->
+          <div class="card elevated champ-card" style="text-align: center;">
+            <span style="width: 48px; height: 48px; border-radius: var(--r-md); background: var(--orange-soft); display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 8px;">⚙️</span>
+            <div style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px;">운영체제</div>
+            <div style="padding-top: 12px; border-top: 1px solid var(--neutral-200);">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #FFD700 0%, #F59E0B 100%); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 22px;">🐺</div>
+              <div style="font-size: 13px; font-weight: 700; color: var(--navy);">커널마스터 <span style="font-size: 11px;">🥇</span></div>
+              <div style="font-size: 11px; color: var(--neutral-500); margin: 2px 0 8px;">컴퓨터공학과</div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--orange);">79h</div>
+            </div>
+          </div>
+          <!-- 네트워크 -->
+          <div class="card elevated champ-card" style="text-align: center;">
+            <span style="width: 48px; height: 48px; border-radius: var(--r-md); background: var(--orange-soft); display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 8px;">🔗</span>
+            <div style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px;">네트워크</div>
+            <div style="padding-top: 12px; border-top: 1px solid var(--neutral-200);">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #FFD700 0%, #F59E0B 100%); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 22px;">🦅</div>
+              <div style="font-size: 13px; font-weight: 700; color: var(--navy);">패킷의신 <span style="font-size: 11px;">🥇</span></div>
+              <div style="font-size: 11px; color: var(--neutral-500); margin: 2px 0 8px;">정보통신공학과</div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--orange);">73h</div>
+            </div>
+          </div>
+          <!-- 자료구조 -->
+          <div class="card elevated champ-card" style="text-align: center;">
+            <span style="width: 48px; height: 48px; border-radius: var(--r-md); background: var(--orange-soft); display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 8px;">🌲</span>
+            <div style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px;">자료구조</div>
+            <div style="padding-top: 12px; border-top: 1px solid var(--neutral-200);">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #FFD700 0%, #F59E0B 100%); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 22px;">🐿️</div>
+              <div style="font-size: 13px; font-weight: 700; color: var(--navy);">트리정복자 <span style="font-size: 11px;">🥇</span></div>
+              <div style="font-size: 11px; color: var(--neutral-500); margin: 2px 0 8px;">소프트웨어학과</div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--orange);">68h</div>
+            </div>
+          </div>
+          <!-- 웹개발 -->
+          <div class="card elevated champ-card" style="text-align: center;">
+            <span style="width: 48px; height: 48px; border-radius: var(--r-md); background: var(--orange-soft); display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 8px;">🖥️</span>
+            <div style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px;">웹개발</div>
+            <div style="padding-top: 12px; border-top: 1px solid var(--neutral-200);">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #FFD700 0%, #F59E0B 100%); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 22px;">🐙</div>
+              <div style="font-size: 13px; font-weight: 700; color: var(--navy);">풀스택장인 <span style="font-size: 11px;">🥇</span></div>
+              <div style="font-size: 11px; color: var(--neutral-500); margin: 2px 0 8px;">컴퓨터공학과</div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--orange);">64h</div>
+            </div>
+          </div>
+          <!-- 자격증 -->
+          <div class="card elevated champ-card" style="text-align: center;">
+            <span style="width: 48px; height: 48px; border-radius: var(--r-md); background: var(--orange-soft); display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 8px;">📜</span>
+            <div style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px;">자격증</div>
+            <div style="padding-top: 12px; border-top: 1px solid var(--neutral-200);">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #FFD700 0%, #F59E0B 100%); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 22px;">🐯</div>
+              <div style="font-size: 13px; font-weight: 700; color: var(--navy);">자격증헌터 <span style="font-size: 11px;">🥇</span></div>
+              <div style="font-size: 11px; color: var(--neutral-500); margin: 2px 0 8px;">산업공학과</div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--orange);">57h</div>
+            </div>
           </div>
         </div>
       </div>
@@ -306,5 +414,14 @@
   </div>
   <div class="screen-id">P-FE-CM-15 · /community/hall</div>
 </div>
+<script>
+  function hofView(view, tabEl) {
+    var isCategory = (view === 'category');
+    document.getElementById('rankingView').style.display = isCategory ? 'none' : '';
+    document.getElementById('categoryView').style.display = isCategory ? '' : 'none';
+    document.querySelectorAll('.hof-tab').forEach(function (t) { t.classList.remove('active'); });
+    if (tabEl) tabEl.classList.add('active');
+  }
+</script>
 </body>
 </html>
